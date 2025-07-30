@@ -1,0 +1,32 @@
+@model List<LibraryApp.Models.FavList>
+
+<div class="text-center mt-5">
+    <h2>Favori Kitaplarım</h2>
+
+    @if (!Model.Any())
+    {
+        <p class="text-muted">Henüz favorilere eklenmiş kitabınız yok.</p>
+    }
+    else
+    {
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Kitap Adı</th>
+                    <th>Yazar</th>
+                    <th>Tür</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var fav in Model)
+                {
+                    <tr>
+                        <td>@fav.Book.Title</td>
+                        <td>@fav.Book.Author</td>
+                        <td>@fav.Book.Genre</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>

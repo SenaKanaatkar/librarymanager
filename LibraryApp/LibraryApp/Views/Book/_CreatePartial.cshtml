@@ -1,0 +1,31 @@
+@model LibraryApp.Models.Book
+
+<h3>Yeni Kitap Ekle</h3>
+
+<form id="createBookForm" method="post" asp-action="Create">
+    <div>
+        <label>Başlık</label>
+        <input asp-for="Title" />
+    </div>
+    <div>
+        <label>Yazar</label>
+        <input asp-for="Author" />
+    </div>
+     <div>
+        <label>Id</label>
+        <input asp-for="Id" type="number" />
+    </div>
+    <div>
+        <label>Detay</label>
+        <textarea asp-for="Details"></textarea>
+    </div>
+    <div>
+        <label>Tür</label>
+        <input asp-for="Genre" />
+    </div>
+    <div>
+        <label>Stok</label>
+        <input asp-for="Stock" type="number" />
+    </div>
+    <button type="submit">Ekle</button>
+</form>

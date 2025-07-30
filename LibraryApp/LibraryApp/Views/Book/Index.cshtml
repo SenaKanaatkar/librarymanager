@@ -1,0 +1,63 @@
+@model IEnumerable<LibraryApp.Models.Book>// ben tabloları buraya koyuorum ama bu iyi bir yöntem mi?
+    <div class="text-end mb-3">
+        
+       <button id="btnLogout" class="btn btn-danger">Çıkış Yap</button>
+
+    </div>
+
+
+ <div class="bg-margin p-2 text-center">
+    <p class="fst-italic">Ödünç alınan kitapların iade süresi 15 gündür...</p>
+        <button class="btn btn-outline-primary btn-lg me-3" id="btnList">Kitap Listesi Görüntüle</button>
+    
+        <button class="btn btn-outline-danger btn-lg me-3" id="btnFavoriteList">Okuma Listem</button>
+        
+        <button class="btn btn-outline-primary btn-lg me-3" id="btnBorrowedList">Ödünç Aldıklarım</button>
+
+
+ </div>>
+ <script src="site.js" defer></script>
+
+ <div class="text-center mt-5">
+    <h2>Kitap Listesi</h2>
+    
+ <table id="bookTable" class="table table-bordered table-striped" style="display:none;">
+    <thead>
+        <tr>
+            <th>Başlık</th>
+            <th>Yazar</th>
+            <th>Tür</th>
+            <th>Stok</th>
+            <th>Id</th>
+            <th>Detaylar</th>
+            <th>İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var book in Model)
+        {
+            <tr>
+                <td>@book.Title</td>
+                <td>@book.Author</td>
+                <td>@book.Genre</td>
+                <td>@book.Stock</td>
+                 <td>@book.Id</td>
+                <td>@book.Details</td>
+                
+                <td>
+                   
+                    
+                    <button type="button" class="btn btn-danger btn-sm d-inline-flex align-items-center gap-1" onclick="addToFavorites('@book.Id')">
+                      <i class="bi bi-heart-fill"></i>Favorilere Ekle</button>
+                    <button type="button" class="btn btn-success btn-sm d-inline-flex align-items-center gap-1" onclick="borrowBook('@book.Id')">
+                      <i class="bi bi-book"></i>Ödünç Al</button>
+                            
+            </tr>
+        }
+    </tbody>
+</table>
+ </div>
+
+ <div id="borrowedBooksContainer"></div>
+
+<div id="favoriteBooksContainer"></div>

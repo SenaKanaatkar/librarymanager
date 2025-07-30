@@ -1,0 +1,51 @@
+@model List<LibraryApp.Models.BorrowList>
+
+<div class="text-center mt-5">
+    <h2>Ödünç Aldığım Kitaplar</h2>
+
+    @if (!Model.Any())
+    {
+        <p class="text-muted">Hiç ödünç aldığınız kitap yok.</p>
+    }
+    else
+    {
+        <table id="borrowTable" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Kitap Adı</th>
+                    <th>Yazar</th>
+                    <th>Tür</th>
+                    <th>Alış Tarihi</th>
+                    <th>İade</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var borrow in Model)
+                {
+                    <tr>
+                        <td>@borrow.Book.Title</td>
+                        <td>@borrow.Book.Author</td>
+                        <td>@borrow.Book.Genre</td>
+                        <td>@borrow.BorrowDate.ToShortDateString()</td>
+                        <td>
+                            @if (borrow.ReturnDate == null)
+                            {
+                                <button type="button"
+                                        class="btn btn-warning btn-sm"
+                                        onclick="returnBook(@borrow.Id)">
+                                    İade Et
+                                </button>
+                            }
+                            else
+                            {
+                                <span class="text-success">
+                                    @borrow.ReturnDate.Value.ToShortDateString()
+                                </span>
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>

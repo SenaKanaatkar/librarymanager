@@ -1,0 +1,137 @@
+@model LibraryApp.Models.AdminViewModel
+
+
+
+<div class="text-end mb-3">
+    <button id="btnLogout" class="btn btn-danger">Çıkış Yap</button>
+</div>
+
+<h2 class="text-center">Admin Paneli</h2>
+
+<div class="bg-margin p-2 text-center mb-4">
+    <p class="fst-italic">Hoş Geldiniz...</p>
+    <button class="btn btn-outline-primary btn-lg me-3" id="btnAdminList">Kitap Listesi</button>
+    <button class="btn btn-outline-danger btn-lg me-3" id="btnUsers">Kullanıcı Listesi</button>
+    <button class="btn btn-outline-success btn-lg me-3" id="btnAddBook">Kitap Ekle</button>
+</div>
+
+<script src="site.js" defer></script>
+
+ <div class="text-center mt-5">
+    <h2>Kitap Listesi</h2>
+    
+ <table id="adminBookTable" class="table table-bordered table-striped" style="display:none;">
+    <thead>
+        <tr>
+            <th>Başlık</th>
+            <th>Yazar</th>
+            <th>Tür</th>
+            <th>Stok</th>
+            <th>Id</th>
+            <th>İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var book in Model.Books)
+        {
+            <tr>
+                <td>@book.Title</td>
+                <td>@book.Author</td>
+                <td>@book.Genre</td>
+                <td>@book.Stock</td>
+                 <td>@book.Id</td>
+                <td>
+                    <button type="button" class="btn btn-danger btn-sm d-inline-flex align-items-center gap-1" onclick="deleteBook('@book.Id')">
+                      <i class="bi bi-trash"></i>Sil</button>
+                    <button type="button" 
+                                       class="btn btn-warning btn-sm d-inline-flex align-items-center gap-1" 
+                                      onclick="window.location.href='/Book/Edit/@book.Id'">
+                                           <i class="bi bi-pencil-square"></i> Düzenle
+                                                  </button>
+
+                </td>
+                
+                
+                            
+            </tr>
+        }
+    </tbody>
+</table>
+ </div>
+
+ <div class="text-center mt-5">
+   
+ <table id="adminUserTable" class="table table-bordered table-striped" style="display:none;">
+    
+    <thead>
+         <h2>Kullanıcı Listesi</h2>
+        <tr>
+            <th>İsim</th>
+            <th>Email</th>
+            <th>Şifre</th>
+            <th>Id</th>
+            <th>İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model.Users)
+        {
+            <tr>
+                <td>@user.Name</td>
+                <td>@user.Email</td>
+                <td>@user.Password</td>
+                <td>@user.Id</td>
+                <td>
+                    <button type="button" 
+                     class="btn btn-danger btn-sm d-inline-flex align-items-center gap-1 delete-user" 
+                        data-userid="@user.Id">
+                             <i class="bi bi-trash"></i> Sil
+                                 </button>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+ </div>
+
+
+<!-- Kitap ekleme modalla -->
+<div class="modal fade" id="addBookModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"> Kitap Ekle/ Düzenle </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <form id="addBookForm">
+            <div class="mb-3">
+                <label class="form-label">Kitap Adı</label>
+                <input type="text" name="Title" class="form-control" required />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Yazar</label>
+                <input type="text" name="Author" class="form-control" required />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Tür</label>
+                <input type="text" name="Genre" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Detay</label>
+                <input type="text" name="Details" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Stok</label>
+                <input type="number" name="Stock" class="form-control" min="1" value="1" required />
+</div>
+
+            <button type="submit" class="btn btn-primary">Kaydet</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+ 
