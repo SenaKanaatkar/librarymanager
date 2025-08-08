@@ -1,16 +1,18 @@
 using LibraryApp.Data;
+using LibraryApp.Dtos;
 using LibraryApp.Models;
 using Microsoft.AspNetCore.Mvc;
-
 namespace LibraryApp.Controllers;
 
 public class BookController : Controller
 {
     private readonly AppDbContext _context;
 
-    public BookController(AppDbContext context) // Dependency injection for the database context nesne oluşturmanın yeni yolu
+    private readonly IRabbitMqService _rabbitMqService;
+    public BookController(AppDbContext context, IRabbitMqService rabbitMqService)
     {
         _context = context;
+        _rabbitMqService = rabbitMqService;
     }
 
     // Kitapları listele
@@ -78,10 +80,30 @@ public class BookController : Controller
         {
             _context.Books.Add(book);
             _context.SaveChanges();
+            var logDto = new LogDto
+            {
+                Message = $"{book.Title} kitabı eklendi.",
+                Timestamp = DateTime.Now,
+                Details = $"Kitap ID: {book.Id}, Yazar: {book.Author}, Tür: {book.Genre}, Stok: {book.Stock}"
+            };
+            _rabbitMqService.Publish(logDto, "logQueue"); 
+
+            var emailDto = new EmailDto
+            {
+                To = "serpilsena2004@gmail.com",
+                Subject = "Yeni Kitap Eklendi",
+                Body = $"Yeni kitap eklendi: {book.Title} - {book.Author}  Bitmeden yakalayın! {book.Stock} adet stokta."
+            };
+            _rabbitMqService.Publish(emailDto, "emailQueue");
+
+                
             return Json(new { success = true });
         }
         return Json(new { success = false, message = "Kitap eklenemedi." });
     }
+
+
+   
     // Kitap güncelleme
     [HttpGet]
     public IActionResult Edit(int id)
@@ -107,7 +129,6 @@ public IActionResult Edit(Book book)
         return NotFound();
     }
 
-    // Alanları güncelle
     existingBook.Title = book.Title;
     existingBook.Author = book.Author;
     existingBook.Genre = book.Genre;
@@ -115,7 +136,7 @@ public IActionResult Edit(Book book)
 
     _context.SaveChanges();
 
-    return RedirectToAction("Admin", "Book"); // Düzenleme sonrası admin kitap listesine geri dön
+    return RedirectToAction("Admin", "Book"); 
 }
 
 

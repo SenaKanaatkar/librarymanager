@@ -9,10 +9,11 @@ namespace LibraryApp.Data
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
         public DbSet<Book> Books { get; set; }  // Books tablosu
-        public DbSet<User> Users { get; set; } // Users tablosu inanılmaz bişey vscode her şeyi yapıyo
+        public DbSet<User> Users { get; set; } 
         public DbSet<BorrowList> BorrowLists { get; set; } // BorrowList tablosu
         public DbSet<FavList> FavLists { get; set; } // FavList tablosu
         public DbSet<WishBook> WishBooks { get; set; } //   bağışlanacak kitaplar tablosu 
+        public DbSet<Log> Logs { get; set; } 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

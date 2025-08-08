@@ -1,45 +1,68 @@
 using Microsoft.EntityFrameworkCore;
-using LibraryApp.Data; // DbContext buradan gelecek
+using LibraryApp.Data;
+using LibraryApp.Consumers;
+using Serilog;
+using Serilog.Events;
 
-var builder = WebApplication.CreateBuilder(args);
+var logPath = "Logs/log-.txt";
 
-// Connection string'i appsettings.json'dan al
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+Log.Logger = new LoggerConfiguration()
+    .MinimumLevel.Information()
+    .WriteTo.File(logPath, restrictedToMinimumLevel: LogEventLevel.Information,
+        retainedFileCountLimit: 7,
+        outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss} [{Level}] {Message}{NewLine}")
+    .WriteTo.Console()  
+    .CreateLogger();
 
-// EF Core'u ekle
-builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlServer(connectionString));
-
-builder.Services.AddDistributedMemoryCache();// Oturum verilerini bellek içinde saklamak için
-builder.Services.AddSession(options =>
+try
 {
-    options.IdleTimeout = TimeSpan.FromMinutes(30); // Oturum süresi
-    options.Cookie.HttpOnly = true;  // Güvenlik
-    options.Cookie.IsEssential = true; // Çerez zorunlu olsun
-});
+    Log.Information("Uygulama başlatılıyor...");
 
+    var builder = WebApplication.CreateBuilder(args);
 
-// MVC desteğini ekle
-builder.Services.AddControllersWithViews();
+    builder.Host.UseSerilog();
 
-var app = builder.Build();
-app.UseSession();
+    var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
-// Hata yönetimi ve HTTPS ayarları
-if (!app.Environment.IsDevelopment())
-{
-    app.UseExceptionHandler("/Home/Error");
-    app.UseHsts();
+    builder.Services.AddDbContext<AppDbContext>(options =>
+        options.UseSqlServer(connectionString));
+
+    builder.Services.AddSingleton<IRabbitMqService, RabbitMqService>();
+    builder.Services.AddHostedService<EmailConsumerService>();
+    builder.Services.AddHostedService<LogConsumerService>();
+
+    builder.Services.AddDistributedMemoryCache();
+    builder.Services.AddSession(options =>
+    {
+        options.IdleTimeout = TimeSpan.FromMinutes(30);
+        options.Cookie.HttpOnly = true;
+        options.Cookie.IsEssential = true;
+    });
+
+    builder.Services.AddControllersWithViews();
+
+    var app = builder.Build();
+
+    app.UseSession();
+    app.UseHttpsRedirection();
+    app.UseStaticFiles();
+    app.UseRouting();
+    app.UseAuthorization();
+
+    app.MapControllerRoute(
+        name: "default",
+        pattern: "{controller=Home}/{action=Index}/{id?}");
+
+    
+    Log.Information("Consumer'lar dinlemeye başladı.");
+
+    app.Run();
 }
-
-app.UseHttpsRedirection();
-app.UseStaticFiles();
-app.UseRouting();
-app.UseAuthorization();
-
-// Varsayılan route
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
-
-app.Run();
+catch (Exception ex)
+{
+    Log.Fatal(ex, "Uygulama beklenmedik şekilde durdu.");
+}
+finally
+{
+    Log.CloseAndFlush();
+}

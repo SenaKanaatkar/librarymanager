@@ -1,0 +1,108 @@
+2025-08-08 14:49:20 [Information] Uygulama başlatılıyor...
+2025-08-08 14:49:20 [Information] Consumer'lar dinlemeye başladı.
+2025-08-08 14:49:20 [Information] User profile is available. Using '"/Users/serpilsenakanaatkar/.aspnet/DataProtection-Keys"' as key repository; keys will not be encrypted at rest.
+2025-08-08 14:49:20 [Error] Hosting failed to start
+2025-08-08 14:49:20 [Fatal] Uygulama beklenmedik şekilde durdu.
+2025-08-08 14:57:51 [Information] Uygulama başlatılıyor...
+2025-08-08 14:57:51 [Information] Consumer'lar dinlemeye başladı.
+2025-08-08 14:57:51 [Information] User profile is available. Using '"/Users/serpilsenakanaatkar/.aspnet/DataProtection-Keys"' as key repository; keys will not be encrypted at rest.
+2025-08-08 14:57:51 [Information] Now listening on: "http://localhost:5077"
+2025-08-08 14:57:51 [Information] Application started. Press Ctrl+C to shut down.
+2025-08-08 14:57:51 [Information] Hosting environment: "Development"
+2025-08-08 14:57:51 [Information] Content root path: "/Users/serpilsenakanaatkar/Desktop/librarymanager/LibraryApp/LibraryApp"
+2025-08-08 14:57:56 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5077""""/""" - null null
+2025-08-08 14:57:56 [Warning] Failed to determine the https port for redirect.
+2025-08-08 14:57:56 [Information] Executing endpoint '"LibraryApp.Controllers.HomeController.Index (LibraryApp)"'
+2025-08-08 14:57:56 [Information] Route matched with "{action = \"Index\", controller = \"Home\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "LibraryApp.Controllers.HomeController" ("LibraryApp").
+2025-08-08 14:57:56 [Information] Executing ViewResult, running view "Index".
+2025-08-08 14:57:56 [Information] Executed ViewResult - view "Index" executed in 62.2497ms.
+2025-08-08 14:57:56 [Information] Executed action "LibraryApp.Controllers.HomeController.Index (LibraryApp)" in 68.342ms
+2025-08-08 14:57:56 [Information] Executed endpoint '"LibraryApp.Controllers.HomeController.Index (LibraryApp)"'
+2025-08-08 14:57:56 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5077""""/""" - 200 null "text/html; charset=utf-8" 96.9746ms
+2025-08-08 14:57:57 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5077""""/Account/AdminPartial""" - null null
+2025-08-08 14:57:57 [Information] Executing endpoint '"AccountController.AdminPartial (LibraryApp)"'
+2025-08-08 14:57:57 [Information] Route matched with "{action = \"AdminPartial\", controller = \"Account\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult AdminPartial()" on controller "AccountController" ("LibraryApp").
+2025-08-08 14:57:57 [Information] Executing PartialViewResult, running view "_AdminPartial".
+2025-08-08 14:57:57 [Information] Executed PartialViewResult - view "_AdminPartial" executed in 1.9355ms.
+2025-08-08 14:57:57 [Information] Executed action "AccountController.AdminPartial (LibraryApp)" in 42.4102ms
+2025-08-08 14:57:57 [Information] Executed endpoint '"AccountController.AdminPartial (LibraryApp)"'
+2025-08-08 14:57:57 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5077""""/Account/AdminPartial""" - 200 null "text/html; charset=utf-8" 45.1609ms
+2025-08-08 14:58:00 [Information] Request starting "HTTP/1.1" "POST" "http"://"localhost:5077""""/Account/AdminLogin""" - "application/x-www-form-urlencoded; charset=UTF-8" 39
+2025-08-08 14:58:00 [Information] Executing endpoint '"AccountController.AdminLogin (LibraryApp)"'
+2025-08-08 14:58:00 [Information] Route matched with "{action = \"AdminLogin\", controller = \"Account\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult AdminLogin(System.String, System.String)" on controller "AccountController" ("LibraryApp").
+2025-08-08 14:58:01 [Information] Executed DbCommand ("15"ms) [Parameters=["@__email_0='?' (Size = 4000), @__password_1='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[BirthDate], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password], [u].[Surname], [u].[Username]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__email_0 AND [u].[Password] = @__password_1 AND [u].[IsAdmin] = CAST(1 AS bit)"
+2025-08-08 14:58:01 [Information] Accessing expired session, Key:"c0fa9ecc-d04b-1962-380a-19cdb42a59b5"
+2025-08-08 14:58:01 [Information] Executing JsonResult, writing value of type '"<>f__AnonymousType0`2[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'.
+2025-08-08 14:58:01 [Information] Executed action "AccountController.AdminLogin (LibraryApp)" in 459.0202ms
+2025-08-08 14:58:01 [Information] Executed endpoint '"AccountController.AdminLogin (LibraryApp)"'
+2025-08-08 14:58:01 [Information] Session started; Key:"c0fa9ecc-d04b-1962-380a-19cdb42a59b5", Id:"b698b2e6-b197-123f-7973-b6e3255ecf34"
+2025-08-08 14:58:01 [Information] Request finished "HTTP/1.1" "POST" "http"://"localhost:5077""""/Account/AdminLogin""" - 200 null "application/json; charset=utf-8" 474.0228ms
+2025-08-08 14:58:01 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5077""""/Book/Admin""" - null null
+2025-08-08 14:58:01 [Information] Executing endpoint '"LibraryApp.Controllers.BookController.Admin (LibraryApp)"'
+2025-08-08 14:58:01 [Information] Route matched with "{action = \"Admin\", controller = \"Book\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Admin()" on controller "LibraryApp.Controllers.BookController" ("LibraryApp").
+2025-08-08 14:58:01 [Information] Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [b].[Id], [b].[Author], [b].[Details], [b].[Genre], [b].[Stock], [b].[Title]
+FROM [Books] AS [b]"
+2025-08-08 14:58:01 [Information] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[Id], [u].[BirthDate], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password], [u].[Surname], [u].[Username]
+FROM [Users] AS [u]"
+2025-08-08 14:58:01 [Information] Executing ViewResult, running view "Admin".
+2025-08-08 14:58:01 [Information] Executed ViewResult - view "Admin" executed in 3.264ms.
+2025-08-08 14:58:01 [Information] Executed action "LibraryApp.Controllers.BookController.Admin (LibraryApp)" in 20.3844ms
+2025-08-08 14:58:01 [Information] Executed endpoint '"LibraryApp.Controllers.BookController.Admin (LibraryApp)"'
+2025-08-08 14:58:01 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5077""""/Book/Admin""" - 200 null "text/html; charset=utf-8" 21.3632ms
+2025-08-08 14:58:01 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5077""""/Book/site.js""" - null null
+2025-08-08 14:58:01 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5077""""/Book/site.js""" - 404 0 null 0.9904ms
+2025-08-08 14:58:01 [Information] Request reached the end of the middleware pipeline without being handled by application code. Request path: "GET" "http"://"localhost:5077""""/Book/site.js", Response status code: 404
+2025-08-08 14:59:51 [Information] Request starting "HTTP/1.1" "POST" "http"://"localhost:5077""""/Book/Add""" - "application/x-www-form-urlencoded" 343
+2025-08-08 14:59:51 [Information] Executing endpoint '"LibraryApp.Controllers.BookController.Add (LibraryApp)"'
+2025-08-08 14:59:51 [Information] Route matched with "{action = \"Add\", controller = \"Book\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Add(LibraryApp.Models.Book)" on controller "LibraryApp.Controllers.BookController" ("LibraryApp").
+2025-08-08 14:59:51 [Information] Executed DbCommand ("9"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = Int32), @p4='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Books] ([Author], [Details], [Genre], [Stock], [Title])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4);"
+2025-08-08 14:59:51 [Information] "Çalıkuşu kitabı eklendi." | Level: "" | Action: "" | Details: "Kitap ID: 2006, Yazar: Reşat Nuri Güntekin, Tür: Roman, Stok: 10" | Timestamp: 08/08/2025 14:59:51
+2025-08-08 14:59:51 [Information] Executing JsonResult, writing value of type '"<>f__AnonymousType2`1[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'.
+2025-08-08 14:59:51 [Information] Executed action "LibraryApp.Controllers.BookController.Add (LibraryApp)" in 108.3864ms
+2025-08-08 14:59:51 [Information] Executed endpoint '"LibraryApp.Controllers.BookController.Add (LibraryApp)"'
+2025-08-08 14:59:51 [Information] Request finished "HTTP/1.1" "POST" "http"://"localhost:5077""""/Book/Add""" - 200 null "application/json; charset=utf-8" 118.9654ms
+2025-08-08 14:59:51 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5077""""/Book/Admin""" - null null
+2025-08-08 14:59:51 [Information] Executing endpoint '"LibraryApp.Controllers.BookController.Admin (LibraryApp)"'
+2025-08-08 14:59:51 [Information] Route matched with "{action = \"Admin\", controller = \"Book\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Admin()" on controller "LibraryApp.Controllers.BookController" ("LibraryApp").
+2025-08-08 14:59:51 [Information] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [b].[Id], [b].[Author], [b].[Details], [b].[Genre], [b].[Stock], [b].[Title]
+FROM [Books] AS [b]"
+2025-08-08 14:59:51 [Information] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[Id], [u].[BirthDate], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password], [u].[Surname], [u].[Username]
+FROM [Users] AS [u]"
+2025-08-08 14:59:51 [Information] Executing ViewResult, running view "Admin".
+2025-08-08 14:59:51 [Information] Executed ViewResult - view "Admin" executed in 0.6449ms.
+2025-08-08 14:59:51 [Information] Executed action "LibraryApp.Controllers.BookController.Admin (LibraryApp)" in 6.4613ms
+2025-08-08 14:59:51 [Information] Executed endpoint '"LibraryApp.Controllers.BookController.Admin (LibraryApp)"'
+2025-08-08 14:59:51 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5077""""/Book/Admin""" - 200 null "text/html; charset=utf-8" 6.9071ms
+2025-08-08 14:59:51 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5077""""/css/site.css""?v=pAGv4ietcJNk_EwsQZ5BN9-K4MuNYS2a9wl4Jw-q9D0" - null null
+2025-08-08 14:59:51 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5077""""/LibraryApp.styles.css""?v=rrze6dKip9cJsKvX2C4uoiW3ALP5K1uTWTfNPWa8eyU" - null null
+2025-08-08 14:59:51 [Information] The file "/css/site.css" was not modified
+2025-08-08 14:59:51 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5077""""/lib/bootstrap/dist/css/bootstrap.min.css""" - null null
+2025-08-08 14:59:51 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5077""""/Book/site.js""" - null null
+2025-08-08 14:59:51 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5077""""/lib/bootstrap/dist/js/bootstrap.bundle.min.js""" - null null
+2025-08-08 14:59:51 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5077""""/css/site.css""?v=pAGv4ietcJNk_EwsQZ5BN9-K4MuNYS2a9wl4Jw-q9D0" - 304 null "text/css" 2.8836ms
+2025-08-08 14:59:51 [Information] The file "/LibraryApp.styles.css" was not modified
+2025-08-08 14:59:51 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5077""""/lib/jquery/dist/jquery.min.js""" - null null
+2025-08-08 14:59:51 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5077""""/Book/site.js""" - 404 0 null 0.3775ms
+2025-08-08 14:59:51 [Information] The file "/lib/bootstrap/dist/js/bootstrap.bundle.min.js" was not modified
+2025-08-08 14:59:51 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5077""""/LibraryApp.styles.css""?v=rrze6dKip9cJsKvX2C4uoiW3ALP5K1uTWTfNPWa8eyU" - 304 null "text/css" 0.767ms
+2025-08-08 14:59:51 [Information] Request reached the end of the middleware pipeline without being handled by application code. Request path: "GET" "http"://"localhost:5077""""/Book/site.js", Response status code: 404
+2025-08-08 14:59:51 [Information] The file "/lib/bootstrap/dist/css/bootstrap.min.css" was not modified
+2025-08-08 14:59:51 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5077""""/lib/bootstrap/dist/js/bootstrap.bundle.min.js""" - 304 null "text/javascript" 0.5081ms
+2025-08-08 14:59:51 [Information] The file "/lib/jquery/dist/jquery.min.js" was not modified
+2025-08-08 14:59:51 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5077""""/js/site.js""?v=2Ev84XnOX-9jD1m9ukt6ejU2C2mRMxUOqCM99MC1lG8" - null null
+2025-08-08 14:59:51 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5077""""/lib/jquery/dist/jquery.min.js""" - 304 null "text/javascript" 0.5912ms
+2025-08-08 14:59:51 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5077""""/lib/bootstrap/dist/css/bootstrap.min.css""" - 304 null "text/css" 1.261ms
+2025-08-08 14:59:51 [Information] The file "/js/site.js" was not modified
+2025-08-08 14:59:51 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5077""""/js/site.js""?v=2Ev84XnOX-9jD1m9ukt6ejU2C2mRMxUOqCM99MC1lG8" - 304 null "text/javascript" 0.9903ms

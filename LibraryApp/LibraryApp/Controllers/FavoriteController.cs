@@ -57,4 +57,12 @@ namespace LibraryApp.Controllers
             return PartialView("_FavoriteBooksPartial", favorites);
         }
     }
+
+
+    
 }
+
+    
+
+
+    

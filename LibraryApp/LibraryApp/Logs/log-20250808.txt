@@ -1,0 +1,1478 @@
+2025-08-08 11:01:43 [Information] Uygulama başlatılıyor...
+2025-08-08 11:01:43 [Debug] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2025-08-08 11:01:43 [Debug] Hosting starting
+2025-08-08 11:01:43 [Information] User profile is available. Using '"/Users/serpilsenakanaatkar/.aspnet/DataProtection-Keys"' as key repository; keys will not be encrypted at rest.
+2025-08-08 11:01:43 [Debug] Reading data from file '"/Users/serpilsenakanaatkar/.aspnet/DataProtection-Keys/key-b058cb2f-7f22-444e-a226-a2c2d325b56d.xml"'.
+2025-08-08 11:01:43 [Debug] Found key {b058cb2f-7f22-444e-a226-a2c2d325b56d}.
+2025-08-08 11:01:43 [Debug] Considering key {b058cb2f-7f22-444e-a226-a2c2d325b56d} with expiration date 2025-10-16 11:41:47Z as default key.
+2025-08-08 11:01:43 [Debug] Forwarded activator type request from "Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60" to "Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60"
+2025-08-08 11:01:43 [Debug] Using managed symmetric algorithm '"System.Security.Cryptography.Aes"'.
+2025-08-08 11:01:43 [Debug] Using managed keyed hash algorithm '"System.Security.Cryptography.HMACSHA256"'.
+2025-08-08 11:01:43 [Debug] Using key {b058cb2f-7f22-444e-a226-a2c2d325b56d} as the default key.
+2025-08-08 11:01:43 [Debug] Key ring with default key {b058cb2f-7f22-444e-a226-a2c2d325b56d} was loaded during application startup.
+2025-08-08 11:01:43 [Error] Hosting failed to start
+System.IO.IOException: Failed to bind to address http://127.0.0.1:5077: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Address already in use
+ ---> System.Net.Sockets.SocketException (48): Address already in use
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2025-08-08 11:01:43 [Fatal] Uygulama beklenmedik şekilde durdu.
+System.IO.IOException: Failed to bind to address http://127.0.0.1:5077: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Address already in use
+ ---> System.Net.Sockets.SocketException (48): Address already in use
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+   at Microsoft.Extensions.Hosting.Internal.Host.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.Run(IHost host)
+   at Program.<Main>$(String[] args) in /Users/serpilsenakanaatkar/Desktop/librarymanager/LibraryApp/LibraryApp/Program.cs:line 65
+2025-08-08 11:04:15 [Information] Uygulama başlatılıyor...
+2025-08-08 11:04:15 [Debug] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2025-08-08 11:04:15 [Debug] Hosting starting
+2025-08-08 11:04:15 [Information] User profile is available. Using '"/Users/serpilsenakanaatkar/.aspnet/DataProtection-Keys"' as key repository; keys will not be encrypted at rest.
+2025-08-08 11:04:15 [Debug] Reading data from file '"/Users/serpilsenakanaatkar/.aspnet/DataProtection-Keys/key-b058cb2f-7f22-444e-a226-a2c2d325b56d.xml"'.
+2025-08-08 11:04:15 [Debug] Found key {b058cb2f-7f22-444e-a226-a2c2d325b56d}.
+2025-08-08 11:04:15 [Debug] Considering key {b058cb2f-7f22-444e-a226-a2c2d325b56d} with expiration date 2025-10-16 11:41:47Z as default key.
+2025-08-08 11:04:15 [Debug] Forwarded activator type request from "Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60" to "Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60"
+2025-08-08 11:04:15 [Debug] Using managed symmetric algorithm '"System.Security.Cryptography.Aes"'.
+2025-08-08 11:04:15 [Debug] Using managed keyed hash algorithm '"System.Security.Cryptography.HMACSHA256"'.
+2025-08-08 11:04:15 [Debug] Using key {b058cb2f-7f22-444e-a226-a2c2d325b56d} as the default key.
+2025-08-08 11:04:15 [Debug] Key ring with default key {b058cb2f-7f22-444e-a226-a2c2d325b56d} was loaded during application startup.
+2025-08-08 11:04:15 [Error] Hosting failed to start
+System.IO.IOException: Failed to bind to address http://127.0.0.1:5077: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Address already in use
+ ---> System.Net.Sockets.SocketException (48): Address already in use
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2025-08-08 11:04:15 [Fatal] Uygulama beklenmedik şekilde durdu.
+System.IO.IOException: Failed to bind to address http://127.0.0.1:5077: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Address already in use
+ ---> System.Net.Sockets.SocketException (48): Address already in use
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+   at Microsoft.Extensions.Hosting.Internal.Host.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.Run(IHost host)
+   at Program.<Main>$(String[] args) in /Users/serpilsenakanaatkar/Desktop/librarymanager/LibraryApp/LibraryApp/Program.cs:line 65
+2025-08-08 11:04:26 [Information] Uygulama başlatılıyor...
+2025-08-08 11:04:26 [Debug] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2025-08-08 11:04:26 [Debug] Hosting starting
+2025-08-08 11:04:26 [Information] User profile is available. Using '"/Users/serpilsenakanaatkar/.aspnet/DataProtection-Keys"' as key repository; keys will not be encrypted at rest.
+2025-08-08 11:04:26 [Debug] Reading data from file '"/Users/serpilsenakanaatkar/.aspnet/DataProtection-Keys/key-b058cb2f-7f22-444e-a226-a2c2d325b56d.xml"'.
+2025-08-08 11:04:26 [Debug] Found key {b058cb2f-7f22-444e-a226-a2c2d325b56d}.
+2025-08-08 11:04:26 [Debug] Considering key {b058cb2f-7f22-444e-a226-a2c2d325b56d} with expiration date 2025-10-16 11:41:47Z as default key.
+2025-08-08 11:04:26 [Debug] Forwarded activator type request from "Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60" to "Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60"
+2025-08-08 11:04:26 [Debug] Using managed symmetric algorithm '"System.Security.Cryptography.Aes"'.
+2025-08-08 11:04:26 [Debug] Using managed keyed hash algorithm '"System.Security.Cryptography.HMACSHA256"'.
+2025-08-08 11:04:26 [Debug] Using key {b058cb2f-7f22-444e-a226-a2c2d325b56d} as the default key.
+2025-08-08 11:04:26 [Debug] Key ring with default key {b058cb2f-7f22-444e-a226-a2c2d325b56d} was loaded during application startup.
+2025-08-08 11:04:26 [Error] Hosting failed to start
+System.IO.IOException: Failed to bind to address http://127.0.0.1:5077: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Address already in use
+ ---> System.Net.Sockets.SocketException (48): Address already in use
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2025-08-08 11:04:26 [Fatal] Uygulama beklenmedik şekilde durdu.
+System.IO.IOException: Failed to bind to address http://127.0.0.1:5077: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Address already in use
+ ---> System.Net.Sockets.SocketException (48): Address already in use
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+   at Microsoft.Extensions.Hosting.Internal.Host.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.Run(IHost host)
+   at Program.<Main>$(String[] args) in /Users/serpilsenakanaatkar/Desktop/librarymanager/LibraryApp/LibraryApp/Program.cs:line 65
+2025-08-08 11:23:11 [Information] Uygulama başlatılıyor...
+2025-08-08 11:23:11 [Debug] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2025-08-08 11:23:11 [Debug] Hosting starting
+2025-08-08 11:23:11 [Information] User profile is available. Using '"/Users/serpilsenakanaatkar/.aspnet/DataProtection-Keys"' as key repository; keys will not be encrypted at rest.
+2025-08-08 11:23:11 [Debug] Reading data from file '"/Users/serpilsenakanaatkar/.aspnet/DataProtection-Keys/key-b058cb2f-7f22-444e-a226-a2c2d325b56d.xml"'.
+2025-08-08 11:23:11 [Debug] Found key {b058cb2f-7f22-444e-a226-a2c2d325b56d}.
+2025-08-08 11:23:11 [Debug] Considering key {b058cb2f-7f22-444e-a226-a2c2d325b56d} with expiration date 2025-10-16 11:41:47Z as default key.
+2025-08-08 11:23:11 [Debug] Forwarded activator type request from "Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60" to "Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60"
+2025-08-08 11:23:11 [Debug] Using managed symmetric algorithm '"System.Security.Cryptography.Aes"'.
+2025-08-08 11:23:11 [Debug] Using managed keyed hash algorithm '"System.Security.Cryptography.HMACSHA256"'.
+2025-08-08 11:23:11 [Debug] Using key {b058cb2f-7f22-444e-a226-a2c2d325b56d} as the default key.
+2025-08-08 11:23:11 [Debug] Key ring with default key {b058cb2f-7f22-444e-a226-a2c2d325b56d} was loaded during application startup.
+2025-08-08 11:23:11 [Error] Hosting failed to start
+System.IO.IOException: Failed to bind to address http://127.0.0.1:5077: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Address already in use
+ ---> System.Net.Sockets.SocketException (48): Address already in use
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2025-08-08 11:23:11 [Fatal] Uygulama beklenmedik şekilde durdu.
+System.IO.IOException: Failed to bind to address http://127.0.0.1:5077: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Address already in use
+ ---> System.Net.Sockets.SocketException (48): Address already in use
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+   at Microsoft.Extensions.Hosting.Internal.Host.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.Run(IHost host)
+   at Program.<Main>$(String[] args) in /Users/serpilsenakanaatkar/Desktop/librarymanager/LibraryApp/LibraryApp/Program.cs:line 63
+2025-08-08 11:23:19 [Information] Uygulama başlatılıyor...
+2025-08-08 11:23:19 [Debug] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2025-08-08 11:23:19 [Debug] Hosting starting
+2025-08-08 11:23:19 [Information] User profile is available. Using '"/Users/serpilsenakanaatkar/.aspnet/DataProtection-Keys"' as key repository; keys will not be encrypted at rest.
+2025-08-08 11:23:19 [Debug] Reading data from file '"/Users/serpilsenakanaatkar/.aspnet/DataProtection-Keys/key-b058cb2f-7f22-444e-a226-a2c2d325b56d.xml"'.
+2025-08-08 11:23:19 [Debug] Found key {b058cb2f-7f22-444e-a226-a2c2d325b56d}.
+2025-08-08 11:23:19 [Debug] Considering key {b058cb2f-7f22-444e-a226-a2c2d325b56d} with expiration date 2025-10-16 11:41:47Z as default key.
+2025-08-08 11:23:19 [Debug] Forwarded activator type request from "Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60" to "Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60"
+2025-08-08 11:23:19 [Debug] Using managed symmetric algorithm '"System.Security.Cryptography.Aes"'.
+2025-08-08 11:23:19 [Debug] Using managed keyed hash algorithm '"System.Security.Cryptography.HMACSHA256"'.
+2025-08-08 11:23:19 [Debug] Using key {b058cb2f-7f22-444e-a226-a2c2d325b56d} as the default key.
+2025-08-08 11:23:19 [Debug] Key ring with default key {b058cb2f-7f22-444e-a226-a2c2d325b56d} was loaded during application startup.
+2025-08-08 11:23:19 [Error] Hosting failed to start
+System.IO.IOException: Failed to bind to address http://127.0.0.1:5077: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Address already in use
+ ---> System.Net.Sockets.SocketException (48): Address already in use
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2025-08-08 11:23:19 [Fatal] Uygulama beklenmedik şekilde durdu.
+System.IO.IOException: Failed to bind to address http://127.0.0.1:5077: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Address already in use
+ ---> System.Net.Sockets.SocketException (48): Address already in use
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+   at Microsoft.Extensions.Hosting.Internal.Host.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.Run(IHost host)
+   at Program.<Main>$(String[] args) in /Users/serpilsenakanaatkar/Desktop/librarymanager/LibraryApp/LibraryApp/Program.cs:line 63
+2025-08-08 11:23:58 [Information] Uygulama başlatılıyor...
+2025-08-08 11:23:59 [Debug] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2025-08-08 11:23:59 [Debug] Hosting starting
+2025-08-08 11:23:59 [Information] User profile is available. Using '"/Users/serpilsenakanaatkar/.aspnet/DataProtection-Keys"' as key repository; keys will not be encrypted at rest.
+2025-08-08 11:23:59 [Debug] Reading data from file '"/Users/serpilsenakanaatkar/.aspnet/DataProtection-Keys/key-b058cb2f-7f22-444e-a226-a2c2d325b56d.xml"'.
+2025-08-08 11:23:59 [Debug] Found key {b058cb2f-7f22-444e-a226-a2c2d325b56d}.
+2025-08-08 11:23:59 [Debug] Considering key {b058cb2f-7f22-444e-a226-a2c2d325b56d} with expiration date 2025-10-16 11:41:47Z as default key.
+2025-08-08 11:23:59 [Debug] Forwarded activator type request from "Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60" to "Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60"
+2025-08-08 11:23:59 [Debug] Using managed symmetric algorithm '"System.Security.Cryptography.Aes"'.
+2025-08-08 11:23:59 [Debug] Using managed keyed hash algorithm '"System.Security.Cryptography.HMACSHA256"'.
+2025-08-08 11:23:59 [Debug] Using key {b058cb2f-7f22-444e-a226-a2c2d325b56d} as the default key.
+2025-08-08 11:23:59 [Debug] Key ring with default key {b058cb2f-7f22-444e-a226-a2c2d325b56d} was loaded during application startup.
+2025-08-08 11:23:59 [Error] Hosting failed to start
+System.IO.IOException: Failed to bind to address http://127.0.0.1:5077: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Address already in use
+ ---> System.Net.Sockets.SocketException (48): Address already in use
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2025-08-08 11:23:59 [Fatal] Uygulama beklenmedik şekilde durdu.
+System.IO.IOException: Failed to bind to address http://127.0.0.1:5077: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Address already in use
+ ---> System.Net.Sockets.SocketException (48): Address already in use
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+   at Microsoft.Extensions.Hosting.Internal.Host.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.Run(IHost host)
+   at Program.<Main>$(String[] args) in /Users/serpilsenakanaatkar/Desktop/librarymanager/LibraryApp/LibraryApp/Program.cs:line 63
+2025-08-08 11:39:35 [Information] Uygulama başlatılıyor...
+2025-08-08 11:39:35 [Debug] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2025-08-08 11:39:35 [Debug] Hosting starting
+2025-08-08 11:39:35 [Information] User profile is available. Using '"/Users/serpilsenakanaatkar/.aspnet/DataProtection-Keys"' as key repository; keys will not be encrypted at rest.
+2025-08-08 11:39:35 [Debug] Reading data from file '"/Users/serpilsenakanaatkar/.aspnet/DataProtection-Keys/key-b058cb2f-7f22-444e-a226-a2c2d325b56d.xml"'.
+2025-08-08 11:39:35 [Debug] Found key {b058cb2f-7f22-444e-a226-a2c2d325b56d}.
+2025-08-08 11:39:35 [Debug] Considering key {b058cb2f-7f22-444e-a226-a2c2d325b56d} with expiration date 2025-10-16 11:41:47Z as default key.
+2025-08-08 11:39:35 [Debug] Forwarded activator type request from "Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60" to "Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60"
+2025-08-08 11:39:35 [Debug] Using managed symmetric algorithm '"System.Security.Cryptography.Aes"'.
+2025-08-08 11:39:35 [Debug] Using managed keyed hash algorithm '"System.Security.Cryptography.HMACSHA256"'.
+2025-08-08 11:39:35 [Debug] Using key {b058cb2f-7f22-444e-a226-a2c2d325b56d} as the default key.
+2025-08-08 11:39:35 [Debug] Key ring with default key {b058cb2f-7f22-444e-a226-a2c2d325b56d} was loaded during application startup.
+2025-08-08 11:39:35 [Error] Hosting failed to start
+System.IO.IOException: Failed to bind to address http://127.0.0.1:5077: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Address already in use
+ ---> System.Net.Sockets.SocketException (48): Address already in use
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2025-08-08 11:39:35 [Fatal] Uygulama beklenmedik şekilde durdu.
+System.IO.IOException: Failed to bind to address http://127.0.0.1:5077: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Address already in use
+ ---> System.Net.Sockets.SocketException (48): Address already in use
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+   at Microsoft.Extensions.Hosting.Internal.Host.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.Run(IHost host)
+   at Program.<Main>$(String[] args) in /Users/serpilsenakanaatkar/Desktop/librarymanager/LibraryApp/LibraryApp/Program.cs:line 57
+2025-08-08 11:43:04 [Information] Uygulama başlatılıyor...
+2025-08-08 11:43:04 [Fatal] Uygulama beklenmedik şekilde durdu.
+System.InvalidOperationException: The service collection cannot be modified because it is read-only.
+   at Microsoft.Extensions.DependencyInjection.ServiceCollection.ThrowReadOnlyException()
+   at Microsoft.Extensions.DependencyInjection.ServiceCollection.CheckReadOnly()
+   at Microsoft.Extensions.DependencyInjection.ServiceCollection.System.Collections.Generic.ICollection<Microsoft.Extensions.DependencyInjection.ServiceDescriptor>.Add(ServiceDescriptor item)
+   at Microsoft.Extensions.DependencyInjection.Extensions.ServiceCollectionDescriptorExtensions.TryAdd(IServiceCollection collection, ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.Extensions.ServiceCollectionDescriptorExtensions.TryAddSingleton[TService](IServiceCollection collection, TService instance)
+   at Microsoft.Extensions.DependencyInjection.MvcCoreServiceCollectionExtensions.AddMvcCore(IServiceCollection services)
+   at Microsoft.Extensions.DependencyInjection.MvcServiceCollectionExtensions.AddControllersCore(IServiceCollection services)
+   at Microsoft.Extensions.DependencyInjection.MvcServiceCollectionExtensions.AddControllersWithViewsCore(IServiceCollection services)
+   at Microsoft.Extensions.DependencyInjection.MvcServiceCollectionExtensions.AddControllersWithViews(IServiceCollection services)
+   at Program.<Main>$(String[] args) in /Users/serpilsenakanaatkar/Desktop/librarymanager/LibraryApp/LibraryApp/Program.cs:line 47
+2025-08-08 11:56:03 [Information] Uygulama başlatılıyor...
+2025-08-08 11:56:03 [Fatal] Uygulama beklenmedik şekilde durdu.
+System.InvalidOperationException: The service collection cannot be modified because it is read-only.
+   at Microsoft.Extensions.DependencyInjection.ServiceCollection.ThrowReadOnlyException()
+   at Microsoft.Extensions.DependencyInjection.ServiceCollection.CheckReadOnly()
+   at Microsoft.Extensions.DependencyInjection.ServiceCollection.System.Collections.Generic.ICollection<Microsoft.Extensions.DependencyInjection.ServiceDescriptor>.Add(ServiceDescriptor item)
+   at Microsoft.Extensions.DependencyInjection.Extensions.ServiceCollectionDescriptorExtensions.TryAdd(IServiceCollection collection, ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.Extensions.ServiceCollectionDescriptorExtensions.TryAddSingleton[TService](IServiceCollection collection, TService instance)
+   at Microsoft.Extensions.DependencyInjection.MvcCoreServiceCollectionExtensions.AddMvcCore(IServiceCollection services)
+   at Microsoft.Extensions.DependencyInjection.MvcServiceCollectionExtensions.AddControllersCore(IServiceCollection services)
+   at Microsoft.Extensions.DependencyInjection.MvcServiceCollectionExtensions.AddControllersWithViewsCore(IServiceCollection services)
+   at Microsoft.Extensions.DependencyInjection.MvcServiceCollectionExtensions.AddControllersWithViews(IServiceCollection services)
+   at Program.<Main>$(String[] args) in /Users/serpilsenakanaatkar/Desktop/librarymanager/LibraryApp/LibraryApp/Program.cs:line 47
+2025-08-08 11:56:14 [Information] Uygulama başlatılıyor...
+2025-08-08 11:56:14 [Fatal] Uygulama beklenmedik şekilde durdu.
+System.InvalidOperationException: The service collection cannot be modified because it is read-only.
+   at Microsoft.Extensions.DependencyInjection.ServiceCollection.ThrowReadOnlyException()
+   at Microsoft.Extensions.DependencyInjection.ServiceCollection.CheckReadOnly()
+   at Microsoft.Extensions.DependencyInjection.ServiceCollection.System.Collections.Generic.ICollection<Microsoft.Extensions.DependencyInjection.ServiceDescriptor>.Add(ServiceDescriptor item)
+   at Microsoft.Extensions.DependencyInjection.Extensions.ServiceCollectionDescriptorExtensions.TryAdd(IServiceCollection collection, ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.Extensions.ServiceCollectionDescriptorExtensions.TryAddSingleton[TService](IServiceCollection collection, TService instance)
+   at Microsoft.Extensions.DependencyInjection.MvcCoreServiceCollectionExtensions.AddMvcCore(IServiceCollection services)
+   at Microsoft.Extensions.DependencyInjection.MvcServiceCollectionExtensions.AddControllersCore(IServiceCollection services)
+   at Microsoft.Extensions.DependencyInjection.MvcServiceCollectionExtensions.AddControllersWithViewsCore(IServiceCollection services)
+   at Microsoft.Extensions.DependencyInjection.MvcServiceCollectionExtensions.AddControllersWithViews(IServiceCollection services)
+   at Program.<Main>$(String[] args) in /Users/serpilsenakanaatkar/Desktop/librarymanager/LibraryApp/LibraryApp/Program.cs:line 47
+2025-08-08 11:56:39 [Information] Uygulama başlatılıyor...
+2025-08-08 11:56:39 [Fatal] Uygulama beklenmedik şekilde durdu.
+System.InvalidOperationException: The service collection cannot be modified because it is read-only.
+   at Microsoft.Extensions.DependencyInjection.ServiceCollection.ThrowReadOnlyException()
+   at Microsoft.Extensions.DependencyInjection.ServiceCollection.CheckReadOnly()
+   at Microsoft.Extensions.DependencyInjection.ServiceCollection.System.Collections.Generic.ICollection<Microsoft.Extensions.DependencyInjection.ServiceDescriptor>.Add(ServiceDescriptor item)
+   at Microsoft.Extensions.DependencyInjection.Extensions.ServiceCollectionDescriptorExtensions.TryAdd(IServiceCollection collection, ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.Extensions.ServiceCollectionDescriptorExtensions.TryAddSingleton[TService](IServiceCollection collection, TService instance)
+   at Microsoft.Extensions.DependencyInjection.MvcCoreServiceCollectionExtensions.AddMvcCore(IServiceCollection services)
+   at Microsoft.Extensions.DependencyInjection.MvcServiceCollectionExtensions.AddControllersCore(IServiceCollection services)
+   at Microsoft.Extensions.DependencyInjection.MvcServiceCollectionExtensions.AddControllersWithViewsCore(IServiceCollection services)
+   at Microsoft.Extensions.DependencyInjection.MvcServiceCollectionExtensions.AddControllersWithViews(IServiceCollection services)
+   at Program.<Main>$(String[] args) in /Users/serpilsenakanaatkar/Desktop/librarymanager/LibraryApp/LibraryApp/Program.cs:line 47
+2025-08-08 11:56:52 [Information] Uygulama başlatılıyor...
+2025-08-08 11:56:52 [Fatal] Uygulama beklenmedik şekilde durdu.
+System.InvalidOperationException: The service collection cannot be modified because it is read-only.
+   at Microsoft.Extensions.DependencyInjection.ServiceCollection.ThrowReadOnlyException()
+   at Microsoft.Extensions.DependencyInjection.ServiceCollection.CheckReadOnly()
+   at Microsoft.Extensions.DependencyInjection.ServiceCollection.System.Collections.Generic.ICollection<Microsoft.Extensions.DependencyInjection.ServiceDescriptor>.Add(ServiceDescriptor item)
+   at Microsoft.Extensions.DependencyInjection.Extensions.ServiceCollectionDescriptorExtensions.TryAdd(IServiceCollection collection, ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.Extensions.ServiceCollectionDescriptorExtensions.TryAddSingleton[TService](IServiceCollection collection, TService instance)
+   at Microsoft.Extensions.DependencyInjection.MvcCoreServiceCollectionExtensions.AddMvcCore(IServiceCollection services)
+   at Microsoft.Extensions.DependencyInjection.MvcServiceCollectionExtensions.AddControllersCore(IServiceCollection services)
+   at Microsoft.Extensions.DependencyInjection.MvcServiceCollectionExtensions.AddControllersWithViewsCore(IServiceCollection services)
+   at Microsoft.Extensions.DependencyInjection.MvcServiceCollectionExtensions.AddControllersWithViews(IServiceCollection services)
+   at Program.<Main>$(String[] args) in /Users/serpilsenakanaatkar/Desktop/librarymanager/LibraryApp/LibraryApp/Program.cs:line 47
+2025-08-08 11:59:28 [Information] Uygulama başlatılıyor...
+2025-08-08 11:59:28 [Debug] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2025-08-08 11:59:28 [Information] Consumer'lar dinlemeye başladı.
+2025-08-08 11:59:28 [Debug] Hosting starting
+2025-08-08 11:59:28 [Information] User profile is available. Using '"/Users/serpilsenakanaatkar/.aspnet/DataProtection-Keys"' as key repository; keys will not be encrypted at rest.
+2025-08-08 11:59:28 [Debug] Reading data from file '"/Users/serpilsenakanaatkar/.aspnet/DataProtection-Keys/key-b058cb2f-7f22-444e-a226-a2c2d325b56d.xml"'.
+2025-08-08 11:59:28 [Debug] Found key {b058cb2f-7f22-444e-a226-a2c2d325b56d}.
+2025-08-08 11:59:28 [Debug] Considering key {b058cb2f-7f22-444e-a226-a2c2d325b56d} with expiration date 2025-10-16 11:41:47Z as default key.
+2025-08-08 11:59:28 [Debug] Forwarded activator type request from "Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60" to "Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60"
+2025-08-08 11:59:28 [Debug] Using managed symmetric algorithm '"System.Security.Cryptography.Aes"'.
+2025-08-08 11:59:28 [Debug] Using managed keyed hash algorithm '"System.Security.Cryptography.HMACSHA256"'.
+2025-08-08 11:59:28 [Debug] Using key {b058cb2f-7f22-444e-a226-a2c2d325b56d} as the default key.
+2025-08-08 11:59:28 [Debug] Key ring with default key {b058cb2f-7f22-444e-a226-a2c2d325b56d} was loaded during application startup.
+2025-08-08 11:59:28 [Error] Hosting failed to start
+System.IO.IOException: Failed to bind to address http://127.0.0.1:5077: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Address already in use
+ ---> System.Net.Sockets.SocketException (48): Address already in use
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2025-08-08 11:59:28 [Fatal] Uygulama beklenmedik şekilde durdu.
+System.IO.IOException: Failed to bind to address http://127.0.0.1:5077: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Address already in use
+ ---> System.Net.Sockets.SocketException (48): Address already in use
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+   at Microsoft.Extensions.Hosting.Internal.Host.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.Run(IHost host)
+   at Program.<Main>$(String[] args) in /Users/serpilsenakanaatkar/Desktop/librarymanager/LibraryApp/LibraryApp/Program.cs:line 58
+2025-08-08 12:01:37 [Information] Uygulama başlatılıyor...
+2025-08-08 12:01:37 [Debug] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2025-08-08 12:01:37 [Information] Consumer'lar dinlemeye başladı.
+2025-08-08 12:01:37 [Debug] Hosting starting
+2025-08-08 12:01:37 [Information] User profile is available. Using '"/Users/serpilsenakanaatkar/.aspnet/DataProtection-Keys"' as key repository; keys will not be encrypted at rest.
+2025-08-08 12:01:37 [Debug] Reading data from file '"/Users/serpilsenakanaatkar/.aspnet/DataProtection-Keys/key-b058cb2f-7f22-444e-a226-a2c2d325b56d.xml"'.
+2025-08-08 12:01:37 [Debug] Found key {b058cb2f-7f22-444e-a226-a2c2d325b56d}.
+2025-08-08 12:01:37 [Debug] Considering key {b058cb2f-7f22-444e-a226-a2c2d325b56d} with expiration date 2025-10-16 11:41:47Z as default key.
+2025-08-08 12:01:37 [Debug] Forwarded activator type request from "Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60" to "Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60"
+2025-08-08 12:01:37 [Debug] Using managed symmetric algorithm '"System.Security.Cryptography.Aes"'.
+2025-08-08 12:01:37 [Debug] Using managed keyed hash algorithm '"System.Security.Cryptography.HMACSHA256"'.
+2025-08-08 12:01:37 [Debug] Using key {b058cb2f-7f22-444e-a226-a2c2d325b56d} as the default key.
+2025-08-08 12:01:37 [Debug] Key ring with default key {b058cb2f-7f22-444e-a226-a2c2d325b56d} was loaded during application startup.
+2025-08-08 12:01:37 [Information] Now listening on: "http://localhost:5077"
+2025-08-08 12:01:37 [Debug] Loaded hosting startup assembly "LibraryApp"
+2025-08-08 12:01:37 [Information] Application started. Press Ctrl+C to shut down.
+2025-08-08 12:01:37 [Information] Hosting environment: "Development"
+2025-08-08 12:01:37 [Information] Content root path: "/Users/serpilsenakanaatkar/Desktop/librarymanager/LibraryApp/LibraryApp"
+2025-08-08 12:01:37 [Debug] Hosting started
+2025-08-08 12:01:43 [Debug] Connection id ""0HNEMB8P3C009"" accepted.
+2025-08-08 12:01:43 [Debug] Connection id ""0HNEMB8P3C009"" started.
+2025-08-08 12:01:43 [Debug] Connection id ""0HNEMB8P3C00A"" accepted.
+2025-08-08 12:01:43 [Debug] Connection id ""0HNEMB8P3C00B"" accepted.
+2025-08-08 12:01:43 [Debug] Connection id ""0HNEMB8P3C00C"" accepted.
+2025-08-08 12:01:43 [Debug] Connection id ""0HNEMB8P3C00D"" accepted.
+2025-08-08 12:01:43 [Debug] Connection id ""0HNEMB8P3C00E"" accepted.
+2025-08-08 12:01:43 [Debug] Connection id ""0HNEMB8P3C00B"" started.
+2025-08-08 12:01:43 [Debug] Connection id ""0HNEMB8P3C00A"" started.
+2025-08-08 12:01:43 [Debug] Connection id ""0HNEMB8P3C00E"" started.
+2025-08-08 12:01:43 [Debug] Connection id ""0HNEMB8P3C00C"" started.
+2025-08-08 12:01:43 [Debug] Connection id ""0HNEMB8P3C00D"" started.
+2025-08-08 12:01:43 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5077""""/""" - null null
+2025-08-08 12:01:43 [Debug] Wildcard detected, all requests with hosts will be allowed.
+2025-08-08 12:01:43 [Warning] Failed to determine the https port for redirect.
+2025-08-08 12:01:43 [Debug] The request path "/" does not match a supported file type
+2025-08-08 12:01:43 [Debug] 1 candidate(s) found for the request path '"/"'
+2025-08-08 12:01:43 [Debug] Endpoint '"LibraryApp.Controllers.HomeController.Index (LibraryApp)"' with route pattern '"{controller=Home}/{action=Index}/{id?}"' is valid for the request path '"/"'
+2025-08-08 12:01:43 [Debug] Request matched endpoint '"LibraryApp.Controllers.HomeController.Index (LibraryApp)"'
+2025-08-08 12:01:43 [Information] Executing endpoint '"LibraryApp.Controllers.HomeController.Index (LibraryApp)"'
+2025-08-08 12:01:43 [Information] Route matched with "{action = \"Index\", controller = \"Home\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "LibraryApp.Controllers.HomeController" ("LibraryApp").
+2025-08-08 12:01:43 [Debug] Execution plan of "authorization" filters (in the following order): ["None"]
+2025-08-08 12:01:43 [Debug] Execution plan of "resource" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2025-08-08 12:01:43 [Debug] Execution plan of "action" filters (in the following order): ["Microsoft.AspNetCore.Mvc.Filters.ControllerActionFilter (Order: -2147483648)", "Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)"]
+2025-08-08 12:01:43 [Debug] Execution plan of "exception" filters (in the following order): ["None"]
+2025-08-08 12:01:43 [Debug] Execution plan of "result" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2025-08-08 12:01:43 [Debug] Executing controller factory for controller "LibraryApp.Controllers.HomeController" ("LibraryApp")
+2025-08-08 12:01:43 [Debug] Executed controller factory for controller "LibraryApp.Controllers.HomeController" ("LibraryApp")
+2025-08-08 12:01:43 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Account/_AdminPartial.cshtml"'.
+2025-08-08 12:01:43 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Account/_LoginPartial.cshtml"'.
+2025-08-08 12:01:43 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Account/_RegisterPartial.cshtml"'.
+2025-08-08 12:01:43 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Book/Admin.cshtml"'.
+2025-08-08 12:01:43 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Book/Create.cshtml"'.
+2025-08-08 12:01:43 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Book/Edit.cshtml"'.
+2025-08-08 12:01:43 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Book/Index.cshtml"'.
+2025-08-08 12:01:43 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Book/_CreatePartial.cshtml"'.
+2025-08-08 12:01:43 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Borrow/_BorrowedBooksPartial.cshtml"'.
+2025-08-08 12:01:43 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Favorite/_FavoriteBooksPartial.cshtml"'.
+2025-08-08 12:01:43 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Index.cshtml"'.
+2025-08-08 12:01:43 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Privacy.cshtml"'.
+2025-08-08 12:01:43 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Shared/Error.cshtml"'.
+2025-08-08 12:01:43 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Shared/_ValidationScriptsPartial.cshtml"'.
+2025-08-08 12:01:43 [Debug] Initializing Razor view compiler with compiled view: '"/Views/_ViewImports.cshtml"'.
+2025-08-08 12:01:43 [Debug] Initializing Razor view compiler with compiled view: '"/Views/_ViewStart.cshtml"'.
+2025-08-08 12:01:43 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Shared/_Layout.cshtml"'.
+2025-08-08 12:01:43 [Debug] View lookup cache miss for view '"Index"' in controller '"Home"'.
+2025-08-08 12:01:43 [Information] Executing ViewResult, running view "Index".
+2025-08-08 12:01:43 [Debug] The view path '"/Views/Home/Index.cshtml"' was found in 6.4742ms.
+2025-08-08 12:01:43 [Debug] View lookup cache miss for view '"_Layout"' in controller '"Home"'.
+2025-08-08 12:01:43 [Debug] Found the endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] for address "(action=[Index],controller=[Home])"
+2025-08-08 12:01:43 [Debug] Successfully processed template "{controller=Home}/{action=Index}/{id?}" for "Route: {controller=Home}/{action=Index}/{id?}" resulting in "" and ""
+2025-08-08 12:01:43 [Debug] Link generation succeeded for endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] with result "/"
+2025-08-08 12:01:43 [Debug] Found the endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] for address "(action=[Index],controller=[Home])"
+2025-08-08 12:01:43 [Debug] Successfully processed template "{controller=Home}/{action=Index}/{id?}" for "Route: {controller=Home}/{action=Index}/{id?}" resulting in "" and ""
+2025-08-08 12:01:43 [Debug] Link generation succeeded for endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] with result "/"
+2025-08-08 12:01:43 [Debug] Found the endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] for address "(action=[About],controller=[Home])"
+2025-08-08 12:01:43 [Debug] Successfully processed template "{controller=Home}/{action=Index}/{id?}" for "Route: {controller=Home}/{action=Index}/{id?}" resulting in "/Home/About" and ""
+2025-08-08 12:01:43 [Debug] Link generation succeeded for endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] with result "/Home/About"
+2025-08-08 12:01:43 [Debug] Found the endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] for address "(action=[Contact],controller=[Home])"
+2025-08-08 12:01:43 [Debug] Successfully processed template "{controller=Home}/{action=Index}/{id?}" for "Route: {controller=Home}/{action=Index}/{id?}" resulting in "/Home/Contact" and ""
+2025-08-08 12:01:43 [Debug] Link generation succeeded for endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] with result "/Home/Contact"
+2025-08-08 12:01:43 [Debug] Found the endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] for address "(action=[Privacy],controller=[Home])"
+2025-08-08 12:01:43 [Debug] Successfully processed template "{controller=Home}/{action=Index}/{id?}" for "Route: {controller=Home}/{action=Index}/{id?}" resulting in "/Home/Privacy" and ""
+2025-08-08 12:01:43 [Debug] Link generation succeeded for endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] with result "/Home/Privacy"
+2025-08-08 12:01:43 [Information] Executed ViewResult - view "Index" executed in 84.4222ms.
+2025-08-08 12:01:43 [Information] Executed action "LibraryApp.Controllers.HomeController.Index (LibraryApp)" in 93.2489ms
+2025-08-08 12:01:43 [Information] Executed endpoint '"LibraryApp.Controllers.HomeController.Index (LibraryApp)"'
+2025-08-08 12:01:43 [Debug] Connection id ""0HNEMB8P3C009"" completed keep alive response.
+2025-08-08 12:01:43 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5077""""/""" - 200 null "text/html; charset=utf-8" 133.1189ms
+2025-08-08 12:01:43 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5077""""/css/site.css""?v=pAGv4ietcJNk_EwsQZ5BN9-K4MuNYS2a9wl4Jw-q9D0" - null null
+2025-08-08 12:01:43 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5077""""/LibraryApp.styles.css""?v=rrze6dKip9cJsKvX2C4uoiW3ALP5K1uTWTfNPWa8eyU" - null null
+2025-08-08 12:01:43 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5077""""/js/site.js""?v=2Ev84XnOX-9jD1m9ukt6ejU2C2mRMxUOqCM99MC1lG8" - null null
+2025-08-08 12:01:43 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5077""""/lib/bootstrap/dist/js/bootstrap.bundle.min.js""" - null null
+2025-08-08 12:01:43 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5077""""/lib/jquery/dist/jquery.min.js""" - null null
+2025-08-08 12:01:43 [Information] The file "/lib/bootstrap/dist/js/bootstrap.bundle.min.js" was not modified
+2025-08-08 12:01:43 [Information] The file "/js/site.js" was not modified
+2025-08-08 12:01:43 [Information] The file "/lib/jquery/dist/jquery.min.js" was not modified
+2025-08-08 12:01:43 [Information] The file "/LibraryApp.styles.css" was not modified
+2025-08-08 12:01:43 [Information] The file "/css/site.css" was not modified
+2025-08-08 12:01:43 [Debug] Handled. Status code: 304 File: "/lib/bootstrap/dist/js/bootstrap.bundle.min.js"
+2025-08-08 12:01:43 [Debug] Handled. Status code: 304 File: "/js/site.js"
+2025-08-08 12:01:43 [Debug] Handled. Status code: 304 File: "/lib/jquery/dist/jquery.min.js"
+2025-08-08 12:01:43 [Debug] Handled. Status code: 304 File: "/css/site.css"
+2025-08-08 12:01:43 [Debug] Handled. Status code: 304 File: "/LibraryApp.styles.css"
+2025-08-08 12:01:43 [Debug] Connection id ""0HNEMB8P3C00E"" completed keep alive response.
+2025-08-08 12:01:43 [Debug] Connection id ""0HNEMB8P3C00C"" completed keep alive response.
+2025-08-08 12:01:43 [Debug] Connection id ""0HNEMB8P3C00D"" completed keep alive response.
+2025-08-08 12:01:43 [Debug] Connection id ""0HNEMB8P3C00A"" completed keep alive response.
+2025-08-08 12:01:43 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5077""""/css/site.css""?v=pAGv4ietcJNk_EwsQZ5BN9-K4MuNYS2a9wl4Jw-q9D0" - 304 null "text/css" 2.8172ms
+2025-08-08 12:01:43 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5077""""/js/site.js""?v=2Ev84XnOX-9jD1m9ukt6ejU2C2mRMxUOqCM99MC1lG8" - 304 null "text/javascript" 2.4849ms
+2025-08-08 12:01:43 [Debug] Connection id ""0HNEMB8P3C00B"" completed keep alive response.
+2025-08-08 12:01:43 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5077""""/LibraryApp.styles.css""?v=rrze6dKip9cJsKvX2C4uoiW3ALP5K1uTWTfNPWa8eyU" - 304 null "text/css" 3.1643ms
+2025-08-08 12:01:43 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5077""""/lib/jquery/dist/jquery.min.js""" - 304 null "text/javascript" 2.2571ms
+2025-08-08 12:01:43 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5077""""/lib/bootstrap/dist/js/bootstrap.bundle.min.js""" - 304 null "text/javascript" 2.8165ms
+2025-08-08 12:01:43 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5077""""/lib/bootstrap/dist/css/bootstrap.min.css""" - null null
+2025-08-08 12:01:43 [Information] The file "/lib/bootstrap/dist/css/bootstrap.min.css" was not modified
+2025-08-08 12:01:43 [Debug] Handled. Status code: 304 File: "/lib/bootstrap/dist/css/bootstrap.min.css"
+2025-08-08 12:01:43 [Debug] Connection id ""0HNEMB8P3C009"" completed keep alive response.
+2025-08-08 12:01:43 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5077""""/lib/bootstrap/dist/css/bootstrap.min.css""" - 304 null "text/css" 1.3522ms
+2025-08-08 12:01:43 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5077""""/css/site.css""?v=pAGv4ietcJNk_EwsQZ5BN9-K4MuNYS2a9wl4Jw-q9D0" - null null
+2025-08-08 12:01:43 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5077""""/lib/bootstrap/dist/css/bootstrap.min.css""" - null null
+2025-08-08 12:01:43 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5077""""/LibraryApp.styles.css""?v=rrze6dKip9cJsKvX2C4uoiW3ALP5K1uTWTfNPWa8eyU" - null null
+2025-08-08 12:01:43 [Information] The file "/css/site.css" was not modified
+2025-08-08 12:01:43 [Debug] Handled. Status code: 304 File: "/css/site.css"
+2025-08-08 12:01:43 [Information] The file "/lib/bootstrap/dist/css/bootstrap.min.css" was not modified
+2025-08-08 12:01:43 [Debug] Connection id ""0HNEMB8P3C00D"" completed keep alive response.
+2025-08-08 12:01:43 [Debug] Handled. Status code: 304 File: "/lib/bootstrap/dist/css/bootstrap.min.css"
+2025-08-08 12:01:43 [Information] The file "/LibraryApp.styles.css" was not modified
+2025-08-08 12:01:43 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5077""""/css/site.css""?v=pAGv4ietcJNk_EwsQZ5BN9-K4MuNYS2a9wl4Jw-q9D0" - 304 null "text/css" 1.1289ms
+2025-08-08 12:01:43 [Debug] Connection id ""0HNEMB8P3C00C"" completed keep alive response.
+2025-08-08 12:01:43 [Debug] Handled. Status code: 304 File: "/LibraryApp.styles.css"
+2025-08-08 12:01:43 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5077""""/lib/bootstrap/dist/css/bootstrap.min.css""" - 304 null "text/css" 1.2275ms
+2025-08-08 12:01:43 [Debug] Connection id ""0HNEMB8P3C00E"" completed keep alive response.
+2025-08-08 12:01:43 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5077""""/LibraryApp.styles.css""?v=rrze6dKip9cJsKvX2C4uoiW3ALP5K1uTWTfNPWa8eyU" - 304 null "text/css" 4.2623ms
+2025-08-08 12:01:43 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5077""""/lib/bootstrap/dist/js/bootstrap.bundle.min.js""" - null null
+2025-08-08 12:01:43 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5077""""/lib/jquery/dist/jquery.min.js""" - null null
+2025-08-08 12:01:43 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5077""""/js/site.js""?v=2Ev84XnOX-9jD1m9ukt6ejU2C2mRMxUOqCM99MC1lG8" - null null
+2025-08-08 12:01:43 [Information] The file "/lib/jquery/dist/jquery.min.js" was not modified
+2025-08-08 12:01:43 [Information] The file "/lib/bootstrap/dist/js/bootstrap.bundle.min.js" was not modified
+2025-08-08 12:01:43 [Information] The file "/js/site.js" was not modified
+2025-08-08 12:01:43 [Debug] Handled. Status code: 304 File: "/lib/bootstrap/dist/js/bootstrap.bundle.min.js"
+2025-08-08 12:01:43 [Debug] Handled. Status code: 304 File: "/lib/jquery/dist/jquery.min.js"
+2025-08-08 12:01:43 [Debug] Handled. Status code: 304 File: "/js/site.js"
+2025-08-08 12:01:43 [Debug] Connection id ""0HNEMB8P3C00B"" completed keep alive response.
+2025-08-08 12:01:43 [Debug] Connection id ""0HNEMB8P3C00A"" completed keep alive response.
+2025-08-08 12:01:43 [Debug] Connection id ""0HNEMB8P3C009"" completed keep alive response.
+2025-08-08 12:01:43 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5077""""/lib/jquery/dist/jquery.min.js""" - 304 null "text/javascript" 1.0832ms
+2025-08-08 12:01:43 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5077""""/js/site.js""?v=2Ev84XnOX-9jD1m9ukt6ejU2C2mRMxUOqCM99MC1lG8" - 304 null "text/javascript" 0.8615ms
+2025-08-08 12:01:43 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5077""""/lib/bootstrap/dist/js/bootstrap.bundle.min.js""" - 304 null "text/javascript" 1.1758ms
+2025-08-08 12:01:46 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5077""""/Account/AdminPartial""" - null null
+2025-08-08 12:01:46 [Debug] The request path "/Account/AdminPartial" does not match a supported file type
+2025-08-08 12:01:46 [Debug] 1 candidate(s) found for the request path '"/Account/AdminPartial"'
+2025-08-08 12:01:46 [Debug] Endpoint '"AccountController.AdminPartial (LibraryApp)"' with route pattern '"{controller=Home}/{action=Index}/{id?}"' is valid for the request path '"/Account/AdminPartial"'
+2025-08-08 12:01:46 [Debug] Request matched endpoint '"AccountController.AdminPartial (LibraryApp)"'
+2025-08-08 12:01:46 [Information] Executing endpoint '"AccountController.AdminPartial (LibraryApp)"'
+2025-08-08 12:01:46 [Information] Route matched with "{action = \"AdminPartial\", controller = \"Account\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult AdminPartial()" on controller "AccountController" ("LibraryApp").
+2025-08-08 12:01:46 [Debug] Execution plan of "authorization" filters (in the following order): ["None"]
+2025-08-08 12:01:46 [Debug] Execution plan of "resource" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2025-08-08 12:01:46 [Debug] Execution plan of "action" filters (in the following order): ["Microsoft.AspNetCore.Mvc.Filters.ControllerActionFilter (Order: -2147483648)", "Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)"]
+2025-08-08 12:01:46 [Debug] Execution plan of "exception" filters (in the following order): ["None"]
+2025-08-08 12:01:46 [Debug] Execution plan of "result" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2025-08-08 12:01:46 [Debug] Executing controller factory for controller "AccountController" ("LibraryApp")
+2025-08-08 12:01:46 [Debug] An 'IServiceProvider' was created for internal use by Entity Framework.
+2025-08-08 12:01:46 [Debug] Executed controller factory for controller "AccountController" ("LibraryApp")
+2025-08-08 12:01:46 [Debug] View lookup cache miss for view '"_AdminPartial"' in controller '"Account"'.
+2025-08-08 12:01:46 [Information] Executing PartialViewResult, running view "_AdminPartial".
+2025-08-08 12:01:46 [Debug] The partial view path '"/Views/Account/_AdminPartial.cshtml"' was found in 0.4651ms.
+2025-08-08 12:01:46 [Information] Executed PartialViewResult - view "_AdminPartial" executed in 2.469ms.
+2025-08-08 12:01:46 [Information] Executed action "AccountController.AdminPartial (LibraryApp)" in 71.6009ms
+2025-08-08 12:01:46 [Information] Executed endpoint '"AccountController.AdminPartial (LibraryApp)"'
+2025-08-08 12:01:46 [Debug] Connection id ""0HNEMB8P3C00D"" completed keep alive response.
+2025-08-08 12:01:46 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5077""""/Account/AdminPartial""" - 200 null "text/html; charset=utf-8" 78.6262ms
+2025-08-08 12:02:11 [Information] Request starting "HTTP/1.1" "POST" "http"://"localhost:5077""""/Account/AdminLogin""" - "application/x-www-form-urlencoded; charset=UTF-8" 39
+2025-08-08 12:02:11 [Debug] "POST" requests are not supported
+2025-08-08 12:02:11 [Debug] 1 candidate(s) found for the request path '"/Account/AdminLogin"'
+2025-08-08 12:02:11 [Debug] Endpoint '"AccountController.AdminLogin (LibraryApp)"' with route pattern '"{controller=Home}/{action=Index}/{id?}"' is valid for the request path '"/Account/AdminLogin"'
+2025-08-08 12:02:11 [Debug] Request matched endpoint '"AccountController.AdminLogin (LibraryApp)"'
+2025-08-08 12:02:11 [Information] Executing endpoint '"AccountController.AdminLogin (LibraryApp)"'
+2025-08-08 12:02:11 [Information] Route matched with "{action = \"AdminLogin\", controller = \"Account\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult AdminLogin(System.String, System.String)" on controller "AccountController" ("LibraryApp").
+2025-08-08 12:02:11 [Debug] Execution plan of "authorization" filters (in the following order): ["None"]
+2025-08-08 12:02:11 [Debug] Execution plan of "resource" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2025-08-08 12:02:11 [Debug] Execution plan of "action" filters (in the following order): ["Microsoft.AspNetCore.Mvc.Filters.ControllerActionFilter (Order: -2147483648)", "Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)"]
+2025-08-08 12:02:11 [Debug] Execution plan of "exception" filters (in the following order): ["None"]
+2025-08-08 12:02:11 [Debug] Execution plan of "result" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2025-08-08 12:02:11 [Debug] Executing controller factory for controller "AccountController" ("LibraryApp")
+2025-08-08 12:02:11 [Debug] Executed controller factory for controller "AccountController" ("LibraryApp")
+2025-08-08 12:02:11 [Debug] Connection id ""0HNEMB8P3C00C"", Request id ""0HNEMB8P3C00C:00000003"": started reading request body.
+2025-08-08 12:02:11 [Debug] Connection id ""0HNEMB8P3C00C"", Request id ""0HNEMB8P3C00C:00000003"": done reading request body.
+2025-08-08 12:02:11 [Debug] Attempting to bind parameter '"email"' of type '"System.String"' ...
+2025-08-08 12:02:11 [Debug] Attempting to bind parameter '"email"' of type '"System.String"' using the name '"email"' in request data ...
+2025-08-08 12:02:11 [Debug] Done attempting to bind parameter '"email"' of type '"System.String"'.
+2025-08-08 12:02:11 [Debug] Done attempting to bind parameter '"email"' of type '"System.String"'.
+2025-08-08 12:02:11 [Debug] Attempting to validate the bound parameter '"email"' of type '"System.String"' ...
+2025-08-08 12:02:11 [Debug] Done attempting to validate the bound parameter '"email"' of type '"System.String"'.
+2025-08-08 12:02:11 [Debug] Attempting to bind parameter '"password"' of type '"System.String"' ...
+2025-08-08 12:02:11 [Debug] Attempting to bind parameter '"password"' of type '"System.String"' using the name '"password"' in request data ...
+2025-08-08 12:02:11 [Debug] Done attempting to bind parameter '"password"' of type '"System.String"'.
+2025-08-08 12:02:11 [Debug] Done attempting to bind parameter '"password"' of type '"System.String"'.
+2025-08-08 12:02:11 [Debug] Attempting to validate the bound parameter '"password"' of type '"System.String"' ...
+2025-08-08 12:02:11 [Debug] Done attempting to validate the bound parameter '"password"' of type '"System.String"'.
+2025-08-08 12:02:12 [Debug] Entity Framework Core "9.0.7" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"9.0.7"' with options: "EngineType=SqlServer "
+2025-08-08 12:02:12 [Debug] Compiling query expression: "
+"'"DbSet<User>()
+    .FirstOrDefault(u => u.Email == __email_0 && u.Password == __password_1 && u.IsAdmin)"'
+2025-08-08 12:02:12 [Debug] Generated query execution expression: "
+"'"queryContext => SingleQueryingEnumerable.Create<User>(
+    relationalQueryContext: (RelationalQueryContext)queryContext, 
+    relationalCommandResolver: parameters => [LIFTABLE Constant: RelationalCommandCache.QueryExpression(
+        Projection Mapping:
+            EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: User.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: User.BirthDate (DateTime) Required, 1], [Property: User.Email (string) Required, 2], [Property: User.IsAdmin (bool) Required, 3], [Property: User.Name (string) Required, 4], [Property: User.Password (string) Required, 5], [Property: User.Surname (string) Required, 6], [Property: User.Username (string) Required, 7] }
+        SELECT TOP(1) u.Id, u.BirthDate, u.Email, u.IsAdmin, u.Name, u.Password, u.Surname, u.Username
+        FROM Users AS u
+        WHERE ((u.Email == @__email_0) && (u.Password == @__password_1)) && u.IsAdmin) | Resolver: c => new RelationalCommandCache(
+        c.Dependencies.MemoryCache, 
+        c.RelationalDependencies.QuerySqlGeneratorFactory, 
+        c.RelationalDependencies.RelationalParameterBasedSqlProcessorFactory, 
+        Projection Mapping:
+            EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: User.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: User.BirthDate (DateTime) Required, 1], [Property: User.Email (string) Required, 2], [Property: User.IsAdmin (bool) Required, 3], [Property: User.Name (string) Required, 4], [Property: User.Password (string) Required, 5], [Property: User.Surname (string) Required, 6], [Property: User.Username (string) Required, 7] }
+        SELECT TOP(1) u.Id, u.BirthDate, u.Email, u.IsAdmin, u.Name, u.Password, u.Surname, u.Username
+        FROM Users AS u
+        WHERE ((u.Email == @__email_0) && (u.Password == @__password_1)) && u.IsAdmin, 
+        False, 
+        new HashSet<string>(
+            new string[]{ }, 
+            StringComparer.Ordinal
+        )
+    )].GetRelationalCommandTemplate(parameters), 
+    readerColumns: null, 
+    shaper: (queryContext, dataReader, resultContext, resultCoordinator) => 
+    {
+        User entity;
+        entity = 
+        {
+            MaterializationContext materializationContext1;
+            IEntityType entityType1;
+            User instance1;
+            InternalEntityEntry entry1;
+            bool hasNullKey1;
+            materializationContext1 = new MaterializationContext(
+                [LIFTABLE Constant: ValueBuffer | Resolver: _ => (object)ValueBuffer.Empty], 
+                queryContext.Context
+            );
+            instance1 = default(User);
+            entry1 = queryContext.TryGetEntry(
+                key: [LIFTABLE Constant: Key: User.Id PK | Resolver: c => c.Dependencies.Model.FindEntityType(\"LibraryApp.Models.User\").FindPrimaryKey()], 
+                keyValues: new object[]{ (object)dataReader.GetInt32(0) }, 
+                throwOnNullKey: True, 
+                hasNullKey: hasNullKey1);
+            !(hasNullKey1) ? entry1 != default(InternalEntityEntry) ? 
+            {
+                entityType1 = entry1.EntityType;
+                return instance1 = (User)entry1.Entity;
+            } : 
+            {
+                ISnapshot shadowSnapshot1;
+                shadowSnapshot1 = [LIFTABLE Constant: Snapshot | Resolver: _ => Snapshot.Empty];
+                entityType1 = [LIFTABLE Constant: EntityType: User | Resolver: namelessParameter{0} => namelessParameter{0}.Dependencies.Model.FindEntityType(\"LibraryApp.Models.User\")];
+                instance1 = switch (entityType1)
+                {
+                    case [LIFTABLE Constant: EntityType: User | Resolver: namelessParameter{1} => namelessParameter{1}.Dependencies.Model.FindEntityType(\"LibraryApp.Models.User\")]: 
+                        {
+                            return 
+                            {
+                                User instance;
+                                instance = new User();
+                                instance.<Id>k__BackingField = dataReader.GetInt32(0);
+                                instance.<BirthDate>k__BackingField = dataReader.GetDateTime(1);
+                                instance.<Email>k__BackingField = dataReader.GetString(2);
+                                instance.<IsAdmin>k__BackingField = dataReader.GetBoolean(3);
+                                instance.<Name>k__BackingField = dataReader.GetString(4);
+                                instance.<Password>k__BackingField = dataReader.GetString(5);
+                                instance.<Surname>k__BackingField = dataReader.GetString(6);
+                                instance.<Username>k__BackingField = dataReader.GetString(7);
+                                (instance is IInjectableService) ? ((IInjectableService)instance).Injected(
+                                    context: materializationContext1.Context, 
+                                    entity: instance, 
+                                    queryTrackingBehavior: TrackAll, 
+                                    structuralType: [LIFTABLE Constant: EntityType: User | Resolver: namelessParameter{2} => namelessParameter{2}.Dependencies.Model.FindEntityType(\"LibraryApp.Models.User\")]) : default(void);
+                                return instance;
+                            }}
+                    default: 
+                        default(User)
+                }
+                ;
+                entry1 = entityType1 == default(IEntityType) ? default(InternalEntityEntry) : queryContext.StartTracking(
+                    entityType: entityType1, 
+                    entity: instance1, 
+                    snapshot: shadowSnapshot1);
+                return instance1;
+            } : default(void);
+            return instance1;
+        };
+        return entity;
+    }, 
+    contextType: LibraryApp.Data.AppDbContext, 
+    standAloneStateManager: False, 
+    detailedErrorsEnabled: False, 
+    threadSafetyChecksEnabled: True)
+    .SingleOrDefault()"'
+2025-08-08 12:02:12 [Debug] Creating DbConnection.
+2025-08-08 12:02:12 [Debug] Created DbConnection. (6ms).
+2025-08-08 12:02:12 [Debug] Opening connection to database '"LibraryApp"' on server '"localhost,1433"'.
+2025-08-08 12:02:12 [Debug] Opened connection to database '"LibraryApp"' on server '"localhost,1433"'.
+2025-08-08 12:02:12 [Debug] Creating DbCommand for '"ExecuteReader"'.
+2025-08-08 12:02:12 [Debug] Created DbCommand for '"ExecuteReader"' (0ms).
+2025-08-08 12:02:12 [Debug] Initialized DbCommand for '"ExecuteReader"' (3ms).
+2025-08-08 12:02:12 [Debug] Executing DbCommand [Parameters=["@__email_0='?' (Size = 4000), @__password_1='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[BirthDate], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password], [u].[Surname], [u].[Username]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__email_0 AND [u].[Password] = @__password_1 AND [u].[IsAdmin] = CAST(1 AS bit)"
+2025-08-08 12:02:12 [Information] Executed DbCommand ("20"ms) [Parameters=["@__email_0='?' (Size = 4000), @__password_1='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[BirthDate], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password], [u].[Surname], [u].[Username]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__email_0 AND [u].[Password] = @__password_1 AND [u].[IsAdmin] = CAST(1 AS bit)"
+2025-08-08 12:02:12 [Debug] Context '"AppDbContext"' started tracking '"User"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-08-08 12:02:12 [Debug] Closing data reader to '"LibraryApp"' on server '"localhost,1433"'.
+2025-08-08 12:02:12 [Debug] A data reader for '"LibraryApp"' on server '"localhost,1433"' is being disposed after spending 16ms reading results.
+2025-08-08 12:02:12 [Debug] Closing connection to database '"LibraryApp"' on server '"localhost,1433"'.
+2025-08-08 12:02:12 [Debug] Closed connection to database '"LibraryApp"' on server '"localhost,1433"' (1ms).
+2025-08-08 12:02:12 [Information] Accessing expired session, Key:"c0fa9ecc-d04b-1962-380a-19cdb42a59b5"
+2025-08-08 12:02:12 [Debug] Found the endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] for address "(action=[Admin],controller=[Book])"
+2025-08-08 12:02:12 [Debug] Successfully processed template "{controller=Home}/{action=Index}/{id?}" for "Route: {controller=Home}/{action=Index}/{id?}" resulting in "/Book/Admin" and ""
+2025-08-08 12:02:12 [Debug] Link generation succeeded for endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] with result "/Book/Admin"
+2025-08-08 12:02:12 [Information] Executing JsonResult, writing value of type '"<>f__AnonymousType0`2[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'.
+2025-08-08 12:02:12 [Information] Executed action "AccountController.AdminLogin (LibraryApp)" in 480.925ms
+2025-08-08 12:02:12 [Information] Executed endpoint '"AccountController.AdminLogin (LibraryApp)"'
+2025-08-08 12:02:12 [Information] Session started; Key:"c0fa9ecc-d04b-1962-380a-19cdb42a59b5", Id:"b69e5b51-92a2-c394-9907-99f658430f17"
+2025-08-08 12:02:12 [Debug] Session stored; Key:"c0fa9ecc-d04b-1962-380a-19cdb42a59b5", Id:"b69e5b51-92a2-c394-9907-99f658430f17", Count:1
+2025-08-08 12:02:12 [Debug] Connection id ""0HNEMB8P3C00C"" completed keep alive response.
+2025-08-08 12:02:12 [Debug] '"AppDbContext"' disposed.
+2025-08-08 12:02:12 [Debug] Disposing connection to database '"LibraryApp"' on server '"localhost,1433"'.
+2025-08-08 12:02:12 [Debug] Disposed connection to database '""' on server '""' (0ms).
+2025-08-08 12:02:12 [Information] Request finished "HTTP/1.1" "POST" "http"://"localhost:5077""""/Account/AdminLogin""" - 200 null "application/json; charset=utf-8" 495.8131ms
+2025-08-08 12:02:12 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5077""""/Book/Admin""" - null null
+2025-08-08 12:02:12 [Debug] The request path "/Book/Admin" does not match a supported file type
+2025-08-08 12:02:12 [Debug] 1 candidate(s) found for the request path '"/Book/Admin"'
+2025-08-08 12:02:12 [Debug] Endpoint '"LibraryApp.Controllers.BookController.Admin (LibraryApp)"' with route pattern '"{controller=Home}/{action=Index}/{id?}"' is valid for the request path '"/Book/Admin"'
+2025-08-08 12:02:12 [Debug] Request matched endpoint '"LibraryApp.Controllers.BookController.Admin (LibraryApp)"'
+2025-08-08 12:02:12 [Information] Executing endpoint '"LibraryApp.Controllers.BookController.Admin (LibraryApp)"'
+2025-08-08 12:02:12 [Information] Route matched with "{action = \"Admin\", controller = \"Book\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Admin()" on controller "LibraryApp.Controllers.BookController" ("LibraryApp").
+2025-08-08 12:02:12 [Debug] Execution plan of "authorization" filters (in the following order): ["None"]
+2025-08-08 12:02:12 [Debug] Execution plan of "resource" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2025-08-08 12:02:12 [Debug] Execution plan of "action" filters (in the following order): ["Microsoft.AspNetCore.Mvc.Filters.ControllerActionFilter (Order: -2147483648)", "Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)"]
+2025-08-08 12:02:12 [Debug] Execution plan of "exception" filters (in the following order): ["None"]
+2025-08-08 12:02:12 [Debug] Execution plan of "result" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2025-08-08 12:02:12 [Debug] Executing controller factory for controller "LibraryApp.Controllers.BookController" ("LibraryApp")
+2025-08-08 12:02:12 [Debug] Executed controller factory for controller "LibraryApp.Controllers.BookController" ("LibraryApp")
+2025-08-08 12:02:12 [Debug] Entity Framework Core "9.0.7" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"9.0.7"' with options: "EngineType=SqlServer "
+2025-08-08 12:02:12 [Debug] Compiling query expression: "
+"'"DbSet<Book>()"'
+2025-08-08 12:02:12 [Debug] Generated query execution expression: "
+"'"queryContext => SingleQueryingEnumerable.Create<Book>(
+    relationalQueryContext: (RelationalQueryContext)queryContext, 
+    relationalCommandResolver: parameters => [LIFTABLE Constant: RelationalCommandCache.QueryExpression(
+        Projection Mapping:
+            EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: Book.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: Book.Author (string) Required, 1], [Property: Book.Details (string) Required, 2], [Property: Book.Genre (string) Required, 3], [Property: Book.Stock (int) Required, 4], [Property: Book.Title (string) Required, 5] }
+        SELECT b.Id, b.Author, b.Details, b.Genre, b.Stock, b.Title
+        FROM Books AS b) | Resolver: c => new RelationalCommandCache(
+        c.Dependencies.MemoryCache, 
+        c.RelationalDependencies.QuerySqlGeneratorFactory, 
+        c.RelationalDependencies.RelationalParameterBasedSqlProcessorFactory, 
+        Projection Mapping:
+            EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: Book.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: Book.Author (string) Required, 1], [Property: Book.Details (string) Required, 2], [Property: Book.Genre (string) Required, 3], [Property: Book.Stock (int) Required, 4], [Property: Book.Title (string) Required, 5] }
+        SELECT b.Id, b.Author, b.Details, b.Genre, b.Stock, b.Title
+        FROM Books AS b, 
+        False, 
+        new HashSet<string>(
+            new string[]{ }, 
+            StringComparer.Ordinal
+        )
+    )].GetRelationalCommandTemplate(parameters), 
+    readerColumns: null, 
+    shaper: (queryContext, dataReader, resultContext, resultCoordinator) => 
+    {
+        Book entity;
+        entity = 
+        {
+            MaterializationContext materializationContext1;
+            IEntityType entityType1;
+            Book instance1;
+            InternalEntityEntry entry1;
+            bool hasNullKey1;
+            materializationContext1 = new MaterializationContext(
+                [LIFTABLE Constant: ValueBuffer | Resolver: _ => (object)ValueBuffer.Empty], 
+                queryContext.Context
+            );
+            instance1 = default(Book);
+            entry1 = queryContext.TryGetEntry(
+                key: [LIFTABLE Constant: Key: Book.Id PK | Resolver: c => c.Dependencies.Model.FindEntityType(\"LibraryApp.Models.Book\").FindPrimaryKey()], 
+                keyValues: new object[]{ (object)dataReader.GetInt32(0) }, 
+                throwOnNullKey: True, 
+                hasNullKey: hasNullKey1);
+            !(hasNullKey1) ? entry1 != default(InternalEntityEntry) ? 
+            {
+                entityType1 = entry1.EntityType;
+                return instance1 = (Book)entry1.Entity;
+            } : 
+            {
+                ISnapshot shadowSnapshot1;
+                shadowSnapshot1 = [LIFTABLE Constant: Snapshot | Resolver: _ => Snapshot.Empty];
+                entityType1 = [LIFTABLE Constant: EntityType: Book | Resolver: namelessParameter{0} => namelessParameter{0}.Dependencies.Model.FindEntityType(\"LibraryApp.Models.Book\")];
+                instance1 = switch (entityType1)
+                {
+                    case [LIFTABLE Constant: EntityType: Book | Resolver: namelessParameter{1} => namelessParameter{1}.Dependencies.Model.FindEntityType(\"LibraryApp.Models.Book\")]: 
+                        {
+                            return 
+                            {
+                                Book instance;
+                                instance = new Book();
+                                instance.<Id>k__BackingField = dataReader.GetInt32(0);
+                                instance.<Author>k__BackingField = dataReader.GetString(1);
+                                instance.<Details>k__BackingField = dataReader.GetString(2);
+                                instance.<Genre>k__BackingField = dataReader.GetString(3);
+                                instance.<Stock>k__BackingField = dataReader.GetInt32(4);
+                                instance.<Title>k__BackingField = dataReader.GetString(5);
+                                (instance is IInjectableService) ? ((IInjectableService)instance).Injected(
+                                    context: materializationContext1.Context, 
+                                    entity: instance, 
+                                    queryTrackingBehavior: TrackAll, 
+                                    structuralType: [LIFTABLE Constant: EntityType: Book | Resolver: namelessParameter{2} => namelessParameter{2}.Dependencies.Model.FindEntityType(\"LibraryApp.Models.Book\")]) : default(void);
+                                return instance;
+                            }}
+                    default: 
+                        default(Book)
+                }
+                ;
+                entry1 = entityType1 == default(IEntityType) ? default(InternalEntityEntry) : queryContext.StartTracking(
+                    entityType: entityType1, 
+                    entity: instance1, 
+                    snapshot: shadowSnapshot1);
+                return instance1;
+            } : default(void);
+            return instance1;
+        };
+        return entity;
+    }, 
+    contextType: LibraryApp.Data.AppDbContext, 
+    standAloneStateManager: False, 
+    detailedErrorsEnabled: False, 
+    threadSafetyChecksEnabled: True)"'
+2025-08-08 12:02:12 [Debug] Creating DbConnection.
+2025-08-08 12:02:12 [Debug] Created DbConnection. (0ms).
+2025-08-08 12:02:12 [Debug] Opening connection to database '"LibraryApp"' on server '"localhost,1433"'.
+2025-08-08 12:02:12 [Debug] Opened connection to database '"LibraryApp"' on server '"localhost,1433"'.
+2025-08-08 12:02:12 [Debug] Creating DbCommand for '"ExecuteReader"'.
+2025-08-08 12:02:12 [Debug] Created DbCommand for '"ExecuteReader"' (0ms).
+2025-08-08 12:02:12 [Debug] Initialized DbCommand for '"ExecuteReader"' (0ms).
+2025-08-08 12:02:12 [Debug] Executing DbCommand [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [b].[Id], [b].[Author], [b].[Details], [b].[Genre], [b].[Stock], [b].[Title]
+FROM [Books] AS [b]"
+2025-08-08 12:02:12 [Information] Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [b].[Id], [b].[Author], [b].[Details], [b].[Genre], [b].[Stock], [b].[Title]
+FROM [Books] AS [b]"
+2025-08-08 12:02:12 [Debug] Context '"AppDbContext"' started tracking '"Book"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-08-08 12:02:12 [Debug] Context '"AppDbContext"' started tracking '"Book"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-08-08 12:02:12 [Debug] Context '"AppDbContext"' started tracking '"Book"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-08-08 12:02:12 [Debug] Context '"AppDbContext"' started tracking '"Book"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-08-08 12:02:12 [Debug] Context '"AppDbContext"' started tracking '"Book"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-08-08 12:02:12 [Debug] Context '"AppDbContext"' started tracking '"Book"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-08-08 12:02:12 [Debug] Context '"AppDbContext"' started tracking '"Book"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-08-08 12:02:12 [Debug] Context '"AppDbContext"' started tracking '"Book"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-08-08 12:02:12 [Debug] Closing data reader to '"LibraryApp"' on server '"localhost,1433"'.
+2025-08-08 12:02:12 [Debug] A data reader for '"LibraryApp"' on server '"localhost,1433"' is being disposed after spending 3ms reading results.
+2025-08-08 12:02:12 [Debug] Closing connection to database '"LibraryApp"' on server '"localhost,1433"'.
+2025-08-08 12:02:12 [Debug] Closed connection to database '"LibraryApp"' on server '"localhost,1433"' (0ms).
+2025-08-08 12:02:12 [Debug] Compiling query expression: "
+"'"DbSet<User>()"'
+2025-08-08 12:02:12 [Debug] Generated query execution expression: "
+"'"queryContext => SingleQueryingEnumerable.Create<User>(
+    relationalQueryContext: (RelationalQueryContext)queryContext, 
+    relationalCommandResolver: parameters => [LIFTABLE Constant: RelationalCommandCache.QueryExpression(
+        Projection Mapping:
+            EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: User.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: User.BirthDate (DateTime) Required, 1], [Property: User.Email (string) Required, 2], [Property: User.IsAdmin (bool) Required, 3], [Property: User.Name (string) Required, 4], [Property: User.Password (string) Required, 5], [Property: User.Surname (string) Required, 6], [Property: User.Username (string) Required, 7] }
+        SELECT u.Id, u.BirthDate, u.Email, u.IsAdmin, u.Name, u.Password, u.Surname, u.Username
+        FROM Users AS u) | Resolver: c => new RelationalCommandCache(
+        c.Dependencies.MemoryCache, 
+        c.RelationalDependencies.QuerySqlGeneratorFactory, 
+        c.RelationalDependencies.RelationalParameterBasedSqlProcessorFactory, 
+        Projection Mapping:
+            EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: User.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: User.BirthDate (DateTime) Required, 1], [Property: User.Email (string) Required, 2], [Property: User.IsAdmin (bool) Required, 3], [Property: User.Name (string) Required, 4], [Property: User.Password (string) Required, 5], [Property: User.Surname (string) Required, 6], [Property: User.Username (string) Required, 7] }
+        SELECT u.Id, u.BirthDate, u.Email, u.IsAdmin, u.Name, u.Password, u.Surname, u.Username
+        FROM Users AS u, 
+        False, 
+        new HashSet<string>(
+            new string[]{ }, 
+            StringComparer.Ordinal
+        )
+    )].GetRelationalCommandTemplate(parameters), 
+    readerColumns: null, 
+    shaper: (queryContext, dataReader, resultContext, resultCoordinator) => 
+    {
+        User entity;
+        entity = 
+        {
+            MaterializationContext materializationContext1;
+            IEntityType entityType1;
+            User instance1;
+            InternalEntityEntry entry1;
+            bool hasNullKey1;
+            materializationContext1 = new MaterializationContext(
+                [LIFTABLE Constant: ValueBuffer | Resolver: _ => (object)ValueBuffer.Empty], 
+                queryContext.Context
+            );
+            instance1 = default(User);
+            entry1 = queryContext.TryGetEntry(
+                key: [LIFTABLE Constant: Key: User.Id PK | Resolver: c => c.Dependencies.Model.FindEntityType(\"LibraryApp.Models.User\").FindPrimaryKey()], 
+                keyValues: new object[]{ (object)dataReader.GetInt32(0) }, 
+                throwOnNullKey: True, 
+                hasNullKey: hasNullKey1);
+            !(hasNullKey1) ? entry1 != default(InternalEntityEntry) ? 
+            {
+                entityType1 = entry1.EntityType;
+                return instance1 = (User)entry1.Entity;
+            } : 
+            {
+                ISnapshot shadowSnapshot1;
+                shadowSnapshot1 = [LIFTABLE Constant: Snapshot | Resolver: _ => Snapshot.Empty];
+                entityType1 = [LIFTABLE Constant: EntityType: User | Resolver: namelessParameter{0} => namelessParameter{0}.Dependencies.Model.FindEntityType(\"LibraryApp.Models.User\")];
+                instance1 = switch (entityType1)
+                {
+                    case [LIFTABLE Constant: EntityType: User | Resolver: namelessParameter{1} => namelessParameter{1}.Dependencies.Model.FindEntityType(\"LibraryApp.Models.User\")]: 
+                        {
+                            return 
+                            {
+                                User instance;
+                                instance = new User();
+                                instance.<Id>k__BackingField = dataReader.GetInt32(0);
+                                instance.<BirthDate>k__BackingField = dataReader.GetDateTime(1);
+                                instance.<Email>k__BackingField = dataReader.GetString(2);
+                                instance.<IsAdmin>k__BackingField = dataReader.GetBoolean(3);
+                                instance.<Name>k__BackingField = dataReader.GetString(4);
+                                instance.<Password>k__BackingField = dataReader.GetString(5);
+                                instance.<Surname>k__BackingField = dataReader.GetString(6);
+                                instance.<Username>k__BackingField = dataReader.GetString(7);
+                                (instance is IInjectableService) ? ((IInjectableService)instance).Injected(
+                                    context: materializationContext1.Context, 
+                                    entity: instance, 
+                                    queryTrackingBehavior: TrackAll, 
+                                    structuralType: [LIFTABLE Constant: EntityType: User | Resolver: namelessParameter{2} => namelessParameter{2}.Dependencies.Model.FindEntityType(\"LibraryApp.Models.User\")]) : default(void);
+                                return instance;
+                            }}
+                    default: 
+                        default(User)
+                }
+                ;
+                entry1 = entityType1 == default(IEntityType) ? default(InternalEntityEntry) : queryContext.StartTracking(
+                    entityType: entityType1, 
+                    entity: instance1, 
+                    snapshot: shadowSnapshot1);
+                return instance1;
+            } : default(void);
+            return instance1;
+        };
+        return entity;
+    }, 
+    contextType: LibraryApp.Data.AppDbContext, 
+    standAloneStateManager: False, 
+    detailedErrorsEnabled: False, 
+    threadSafetyChecksEnabled: True)"'
+2025-08-08 12:02:12 [Debug] Opening connection to database '"LibraryApp"' on server '"localhost,1433"'.
+2025-08-08 12:02:12 [Debug] Opened connection to database '"LibraryApp"' on server '"localhost,1433"'.
+2025-08-08 12:02:12 [Debug] Creating DbCommand for '"ExecuteReader"'.
+2025-08-08 12:02:12 [Debug] Created DbCommand for '"ExecuteReader"' (0ms).
+2025-08-08 12:02:12 [Debug] Initialized DbCommand for '"ExecuteReader"' (0ms).
+2025-08-08 12:02:12 [Debug] Executing DbCommand [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[Id], [u].[BirthDate], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password], [u].[Surname], [u].[Username]
+FROM [Users] AS [u]"
+2025-08-08 12:02:12 [Information] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[Id], [u].[BirthDate], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password], [u].[Surname], [u].[Username]
+FROM [Users] AS [u]"
+2025-08-08 12:02:12 [Debug] Context '"AppDbContext"' started tracking '"User"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-08-08 12:02:12 [Debug] Context '"AppDbContext"' started tracking '"User"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-08-08 12:02:12 [Debug] Context '"AppDbContext"' started tracking '"User"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-08-08 12:02:12 [Debug] Context '"AppDbContext"' started tracking '"User"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-08-08 12:02:12 [Debug] Context '"AppDbContext"' started tracking '"User"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-08-08 12:02:12 [Debug] Closing data reader to '"LibraryApp"' on server '"localhost,1433"'.
+2025-08-08 12:02:12 [Debug] A data reader for '"LibraryApp"' on server '"localhost,1433"' is being disposed after spending 0ms reading results.
+2025-08-08 12:02:12 [Debug] Closing connection to database '"LibraryApp"' on server '"localhost,1433"'.
+2025-08-08 12:02:12 [Debug] Closed connection to database '"LibraryApp"' on server '"localhost,1433"' (0ms).
+2025-08-08 12:02:12 [Debug] View lookup cache miss for view '"Admin"' in controller '"Book"'.
+2025-08-08 12:02:12 [Information] Executing ViewResult, running view "Admin".
+2025-08-08 12:02:12 [Debug] The view path '"/Views/Book/Admin.cshtml"' was found in 0.3187ms.
+2025-08-08 12:02:12 [Debug] View lookup cache miss for view '"_Layout"' in controller '"Book"'.
+2025-08-08 12:02:12 [Debug] Found the endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] for address "(action=[Index],controller=[Home])"
+2025-08-08 12:02:12 [Debug] Successfully processed template "{controller=Home}/{action=Index}/{id?}" for "Route: {controller=Home}/{action=Index}/{id?}" resulting in "" and ""
+2025-08-08 12:02:12 [Debug] Link generation succeeded for endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] with result "/"
+2025-08-08 12:02:12 [Debug] Found the endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] for address "(action=[Index],controller=[Home])"
+2025-08-08 12:02:12 [Debug] Successfully processed template "{controller=Home}/{action=Index}/{id?}" for "Route: {controller=Home}/{action=Index}/{id?}" resulting in "" and ""
+2025-08-08 12:02:12 [Debug] Link generation succeeded for endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] with result "/"
+2025-08-08 12:02:12 [Debug] Found the endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] for address "(action=[About],controller=[Home])"
+2025-08-08 12:02:12 [Debug] Successfully processed template "{controller=Home}/{action=Index}/{id?}" for "Route: {controller=Home}/{action=Index}/{id?}" resulting in "/Home/About" and ""
+2025-08-08 12:02:12 [Debug] Link generation succeeded for endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] with result "/Home/About"
+2025-08-08 12:02:12 [Debug] Found the endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] for address "(action=[Contact],controller=[Home])"
+2025-08-08 12:02:12 [Debug] Successfully processed template "{controller=Home}/{action=Index}/{id?}" for "Route: {controller=Home}/{action=Index}/{id?}" resulting in "/Home/Contact" and ""
+2025-08-08 12:02:12 [Debug] Link generation succeeded for endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] with result "/Home/Contact"
+2025-08-08 12:02:12 [Debug] Found the endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] for address "(action=[Privacy],controller=[Home])"
+2025-08-08 12:02:12 [Debug] Successfully processed template "{controller=Home}/{action=Index}/{id?}" for "Route: {controller=Home}/{action=Index}/{id?}" resulting in "/Home/Privacy" and ""
+2025-08-08 12:02:12 [Debug] Link generation succeeded for endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] with result "/Home/Privacy"
+2025-08-08 12:02:12 [Information] Executed ViewResult - view "Admin" executed in 3.999ms.
+2025-08-08 12:02:12 [Information] Executed action "LibraryApp.Controllers.BookController.Admin (LibraryApp)" in 24.5506ms
+2025-08-08 12:02:12 [Information] Executed endpoint '"LibraryApp.Controllers.BookController.Admin (LibraryApp)"'
+2025-08-08 12:02:12 [Debug] Connection id ""0HNEMB8P3C00E"" completed keep alive response.
+2025-08-08 12:02:12 [Debug] '"AppDbContext"' disposed.
+2025-08-08 12:02:12 [Debug] Disposing connection to database '"LibraryApp"' on server '"localhost,1433"'.
+2025-08-08 12:02:12 [Debug] Disposed connection to database '""' on server '""' (0ms).
+2025-08-08 12:02:12 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5077""""/Book/Admin""" - 200 null "text/html; charset=utf-8" 25.8529ms
+2025-08-08 12:02:12 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5077""""/Book/site.js""" - null null
+2025-08-08 12:02:12 [Debug] The request path "/Book/site.js" does not match an existing file
+2025-08-08 12:02:12 [Debug] No candidates found for the request path '"/Book/site.js"'
+2025-08-08 12:02:12 [Debug] Request did not match any endpoints
+2025-08-08 12:02:12 [Debug] Connection id ""0HNEMB8P3C00B"" completed keep alive response.
+2025-08-08 12:02:12 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5077""""/Book/site.js""" - 404 0 null 2.8194ms
+2025-08-08 12:02:12 [Information] Request reached the end of the middleware pipeline without being handled by application code. Request path: "GET" "http"://"localhost:5077""""/Book/site.js", Response status code: 404
+2025-08-08 12:02:12 [Debug] Connection id ""0HNEMB8P3C00A"" reset.
+2025-08-08 12:02:12 [Debug] Connection id ""0HNEMB8P3C009"" reset.
+2025-08-08 12:02:12 [Debug] Connection id ""0HNEMB8P3C009"" sending FIN because: ""The Socket transport's send loop completed gracefully.""
+2025-08-08 12:02:12 [Debug] Connection id ""0HNEMB8P3C00A"" sending FIN because: ""The Socket transport's send loop completed gracefully.""
+2025-08-08 12:02:12 [Debug] Connection id ""0HNEMB8P3C009"" disconnecting.
+2025-08-08 12:02:12 [Debug] Connection id ""0HNEMB8P3C00A"" disconnecting.
+2025-08-08 12:02:12 [Debug] Connection id ""0HNEMB8P3C009"" stopped.
+2025-08-08 12:02:12 [Debug] Connection id ""0HNEMB8P3C00A"" stopped.
+2025-08-08 12:02:15 [Debug] Connection id ""0HNEMB8P3C00D"" received FIN.
+2025-08-08 12:02:15 [Debug] Connection id ""0HNEMB8P3C00D"" disconnecting.
+2025-08-08 12:02:15 [Debug] Connection id ""0HNEMB8P3C00D"" sending FIN because: ""The Socket transport's send loop completed gracefully.""
+2025-08-08 12:02:15 [Debug] Connection id ""0HNEMB8P3C00D"" stopped.
+2025-08-08 12:02:41 [Debug] Connection id ""0HNEMB8P3C00C"" received FIN.
+2025-08-08 12:02:41 [Debug] Connection id ""0HNEMB8P3C00C"" sending FIN because: ""The Socket transport's send loop completed gracefully.""
+2025-08-08 12:02:41 [Debug] Connection id ""0HNEMB8P3C00C"" disconnecting.
+2025-08-08 12:02:41 [Debug] Connection id ""0HNEMB8P3C00C"" stopped.
+2025-08-08 12:02:41 [Debug] Connection id ""0HNEMB8P3C00E"" received FIN.
+2025-08-08 12:02:41 [Debug] Connection id ""0HNEMB8P3C00E"" sending FIN because: ""The Socket transport's send loop completed gracefully.""
+2025-08-08 12:02:41 [Debug] Connection id ""0HNEMB8P3C00E"" disconnecting.
+2025-08-08 12:02:41 [Debug] Connection id ""0HNEMB8P3C00E"" stopped.
+2025-08-08 12:02:41 [Debug] Connection id ""0HNEMB8P3C00B"" received FIN.
+2025-08-08 12:02:41 [Debug] Connection id ""0HNEMB8P3C00B"" disconnecting.
+2025-08-08 12:02:41 [Debug] Connection id ""0HNEMB8P3C00B"" sending FIN because: ""The Socket transport's send loop completed gracefully.""
+2025-08-08 12:02:41 [Debug] Connection id ""0HNEMB8P3C00B"" stopped.
+2025-08-08 12:02:49 [Debug] Connection id ""0HNEMB8P3C00F"" accepted.
+2025-08-08 12:02:49 [Debug] Connection id ""0HNEMB8P3C00F"" started.
+2025-08-08 12:02:49 [Information] Request starting "HTTP/1.1" "POST" "http"://"localhost:5077""""/Book/Add""" - "application/x-www-form-urlencoded" 93
+2025-08-08 12:02:49 [Debug] "POST" requests are not supported
+2025-08-08 12:02:49 [Debug] 1 candidate(s) found for the request path '"/Book/Add"'
+2025-08-08 12:02:49 [Debug] Endpoint '"LibraryApp.Controllers.BookController.Add (LibraryApp)"' with route pattern '"{controller=Home}/{action=Index}/{id?}"' is valid for the request path '"/Book/Add"'
+2025-08-08 12:02:49 [Debug] Request matched endpoint '"LibraryApp.Controllers.BookController.Add (LibraryApp)"'
+2025-08-08 12:02:49 [Information] Executing endpoint '"LibraryApp.Controllers.BookController.Add (LibraryApp)"'
+2025-08-08 12:02:49 [Information] Route matched with "{action = \"Add\", controller = \"Book\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Add(LibraryApp.Models.Book)" on controller "LibraryApp.Controllers.BookController" ("LibraryApp").
+2025-08-08 12:02:49 [Debug] Execution plan of "authorization" filters (in the following order): ["None"]
+2025-08-08 12:02:49 [Debug] Execution plan of "resource" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2025-08-08 12:02:49 [Debug] Execution plan of "action" filters (in the following order): ["Microsoft.AspNetCore.Mvc.Filters.ControllerActionFilter (Order: -2147483648)", "Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)"]
+2025-08-08 12:02:49 [Debug] Execution plan of "exception" filters (in the following order): ["None"]
+2025-08-08 12:02:49 [Debug] Execution plan of "result" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2025-08-08 12:02:49 [Debug] Executing controller factory for controller "LibraryApp.Controllers.BookController" ("LibraryApp")
+2025-08-08 12:02:49 [Debug] Executed controller factory for controller "LibraryApp.Controllers.BookController" ("LibraryApp")
+2025-08-08 12:02:49 [Debug] Connection id ""0HNEMB8P3C00F"", Request id ""0HNEMB8P3C00F:00000001"": started reading request body.
+2025-08-08 12:02:49 [Debug] Connection id ""0HNEMB8P3C00F"", Request id ""0HNEMB8P3C00F:00000001"": done reading request body.
+2025-08-08 12:02:49 [Debug] Attempting to bind parameter '"book"' of type '"LibraryApp.Models.Book"' ...
+2025-08-08 12:02:49 [Debug] Attempting to bind parameter '"book"' of type '"LibraryApp.Models.Book"' using the name '""' in request data ...
+2025-08-08 12:02:49 [Debug] Attempting to bind property '"LibraryApp.Models.Book"."Id"' of type '"System.Int32"' using the name '"Id"' in request data ...
+2025-08-08 12:02:49 [Debug] Could not find a value in the request with name '"Id"' for binding property '"LibraryApp.Models.Book"."Id"' of type '"System.Int32"'.
+2025-08-08 12:02:49 [Debug] Done attempting to bind property '"LibraryApp.Models.Book"."Id"' of type '"System.Int32"'.
+2025-08-08 12:02:49 [Debug] Attempting to bind property '"LibraryApp.Models.Book"."Title"' of type '"System.String"' using the name '"Title"' in request data ...
+2025-08-08 12:02:49 [Debug] Done attempting to bind property '"LibraryApp.Models.Book"."Title"' of type '"System.String"'.
+2025-08-08 12:02:49 [Debug] Attempting to bind property '"LibraryApp.Models.Book"."Author"' of type '"System.String"' using the name '"Author"' in request data ...
+2025-08-08 12:02:49 [Debug] Done attempting to bind property '"LibraryApp.Models.Book"."Author"' of type '"System.String"'.
+2025-08-08 12:02:49 [Debug] Attempting to bind property '"LibraryApp.Models.Book"."Details"' of type '"System.String"' using the name '"Details"' in request data ...
+2025-08-08 12:02:49 [Debug] Done attempting to bind property '"LibraryApp.Models.Book"."Details"' of type '"System.String"'.
+2025-08-08 12:02:49 [Debug] Attempting to bind property '"LibraryApp.Models.Book"."Genre"' of type '"System.String"' using the name '"Genre"' in request data ...
+2025-08-08 12:02:49 [Debug] Done attempting to bind property '"LibraryApp.Models.Book"."Genre"' of type '"System.String"'.
+2025-08-08 12:02:49 [Debug] Attempting to bind property '"LibraryApp.Models.Book"."Stock"' of type '"System.Int32"' using the name '"Stock"' in request data ...
+2025-08-08 12:02:49 [Debug] Done attempting to bind property '"LibraryApp.Models.Book"."Stock"' of type '"System.Int32"'.
+2025-08-08 12:02:49 [Debug] Done attempting to bind parameter '"book"' of type '"LibraryApp.Models.Book"'.
+2025-08-08 12:02:49 [Debug] Done attempting to bind parameter '"book"' of type '"LibraryApp.Models.Book"'.
+2025-08-08 12:02:49 [Debug] Attempting to validate the bound parameter '"book"' of type '"LibraryApp.Models.Book"' ...
+2025-08-08 12:02:49 [Debug] Done attempting to validate the bound parameter '"book"' of type '"LibraryApp.Models.Book"'.
+2025-08-08 12:02:49 [Debug] Entity Framework Core "9.0.7" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"9.0.7"' with options: "EngineType=SqlServer "
+2025-08-08 12:02:49 [Debug] '"AppDbContext"' generated a temporary value for the property '"Book"."Id"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-08-08 12:02:49 [Debug] Context '"AppDbContext"' started tracking '"Book"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-08-08 12:02:49 [Debug] SaveChanges starting for '"AppDbContext"'.
+2025-08-08 12:02:49 [Debug] DetectChanges starting for '"AppDbContext"'.
+2025-08-08 12:02:49 [Debug] DetectChanges completed for '"AppDbContext"'.
+2025-08-08 12:02:49 [Debug] Creating DbConnection.
+2025-08-08 12:02:49 [Debug] Created DbConnection. (0ms).
+2025-08-08 12:02:49 [Debug] Opening connection to database '"LibraryApp"' on server '"localhost,1433"'.
+2025-08-08 12:02:49 [Debug] Opened connection to database '"LibraryApp"' on server '"localhost,1433"'.
+2025-08-08 12:02:49 [Debug] Creating DbCommand for '"ExecuteReader"'.
+2025-08-08 12:02:49 [Debug] Created DbCommand for '"ExecuteReader"' (0ms).
+2025-08-08 12:02:49 [Debug] Initialized DbCommand for '"ExecuteReader"' (0ms).
+2025-08-08 12:02:49 [Debug] Executing DbCommand [Parameters=["@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = Int32), @p4='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Books] ([Author], [Details], [Genre], [Stock], [Title])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4);"
+2025-08-08 12:02:49 [Information] Executed DbCommand ("8"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = Int32), @p4='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Books] ([Author], [Details], [Genre], [Stock], [Title])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4);"
+2025-08-08 12:02:49 [Debug] The foreign key property '"Book"."Id"' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2025-08-08 12:02:49 [Debug] Closing data reader to '"LibraryApp"' on server '"localhost,1433"'.
+2025-08-08 12:02:49 [Debug] A data reader for '"LibraryApp"' on server '"localhost,1433"' is being disposed after spending 4ms reading results.
+2025-08-08 12:02:49 [Debug] Closing connection to database '"LibraryApp"' on server '"localhost,1433"'.
+2025-08-08 12:02:49 [Debug] Closed connection to database '"LibraryApp"' on server '"localhost,1433"' (0ms).
+2025-08-08 12:02:49 [Debug] An entity of type '"Book"' tracked by '"AppDbContext"' changed state from 'Added' to 'Unchanged'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-08-08 12:02:49 [Debug] SaveChanges completed for '"AppDbContext"' with 1 entities written to the database.
+2025-08-08 12:02:49 [Information] "Yaşlı Adam Ve Deniz kitabı eklendi." | Level: "" | Action: "" | Details: "Kitap ID: 2005, Yazar: Ernest Hemingway, Tür: Roman, Stok: 3" | Timestamp: 08/08/2025 12:02:49
+2025-08-08 12:02:49 [Information] Executing JsonResult, writing value of type '"<>f__AnonymousType2`1[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'.
+2025-08-08 12:02:49 [Information] Executed action "LibraryApp.Controllers.BookController.Add (LibraryApp)" in 115.5408ms
+2025-08-08 12:02:49 [Information] Executed endpoint '"LibraryApp.Controllers.BookController.Add (LibraryApp)"'
+2025-08-08 12:02:49 [Debug] Connection id ""0HNEMB8P3C00F"" completed keep alive response.
+2025-08-08 12:02:49 [Debug] '"AppDbContext"' disposed.
+2025-08-08 12:02:49 [Debug] Disposing connection to database '"LibraryApp"' on server '"localhost,1433"'.
+2025-08-08 12:02:49 [Debug] Disposed connection to database '""' on server '""' (0ms).
+2025-08-08 12:02:49 [Information] Request finished "HTTP/1.1" "POST" "http"://"localhost:5077""""/Book/Add""" - 200 null "application/json; charset=utf-8" 126.6234ms
+2025-08-08 12:02:49 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5077""""/Book/Admin""" - null null
+2025-08-08 12:02:49 [Debug] The request path "/Book/Admin" does not match a supported file type
+2025-08-08 12:02:49 [Debug] 1 candidate(s) found for the request path '"/Book/Admin"'
+2025-08-08 12:02:49 [Debug] Endpoint '"LibraryApp.Controllers.BookController.Admin (LibraryApp)"' with route pattern '"{controller=Home}/{action=Index}/{id?}"' is valid for the request path '"/Book/Admin"'
+2025-08-08 12:02:49 [Debug] Request matched endpoint '"LibraryApp.Controllers.BookController.Admin (LibraryApp)"'
+2025-08-08 12:02:49 [Information] Executing endpoint '"LibraryApp.Controllers.BookController.Admin (LibraryApp)"'
+2025-08-08 12:02:49 [Information] Route matched with "{action = \"Admin\", controller = \"Book\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Admin()" on controller "LibraryApp.Controllers.BookController" ("LibraryApp").
+2025-08-08 12:02:49 [Debug] Execution plan of "authorization" filters (in the following order): ["None"]
+2025-08-08 12:02:49 [Debug] Execution plan of "resource" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2025-08-08 12:02:49 [Debug] Execution plan of "action" filters (in the following order): ["Microsoft.AspNetCore.Mvc.Filters.ControllerActionFilter (Order: -2147483648)", "Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)"]
+2025-08-08 12:02:49 [Debug] Execution plan of "exception" filters (in the following order): ["None"]
+2025-08-08 12:02:49 [Debug] Execution plan of "result" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2025-08-08 12:02:49 [Debug] Executing controller factory for controller "LibraryApp.Controllers.BookController" ("LibraryApp")
+2025-08-08 12:02:49 [Debug] Executed controller factory for controller "LibraryApp.Controllers.BookController" ("LibraryApp")
+2025-08-08 12:02:49 [Debug] Entity Framework Core "9.0.7" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"9.0.7"' with options: "EngineType=SqlServer "
+2025-08-08 12:02:49 [Debug] Creating DbConnection.
+2025-08-08 12:02:49 [Debug] Created DbConnection. (0ms).
+2025-08-08 12:02:49 [Debug] Opening connection to database '"LibraryApp"' on server '"localhost,1433"'.
+2025-08-08 12:02:49 [Debug] Opened connection to database '"LibraryApp"' on server '"localhost,1433"'.
+2025-08-08 12:02:49 [Debug] Creating DbCommand for '"ExecuteReader"'.
+2025-08-08 12:02:49 [Debug] Created DbCommand for '"ExecuteReader"' (0ms).
+2025-08-08 12:02:49 [Debug] Initialized DbCommand for '"ExecuteReader"' (0ms).
+2025-08-08 12:02:49 [Debug] Executing DbCommand [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [b].[Id], [b].[Author], [b].[Details], [b].[Genre], [b].[Stock], [b].[Title]
+FROM [Books] AS [b]"
+2025-08-08 12:02:49 [Information] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [b].[Id], [b].[Author], [b].[Details], [b].[Genre], [b].[Stock], [b].[Title]
+FROM [Books] AS [b]"
+2025-08-08 12:02:49 [Debug] Context '"AppDbContext"' started tracking '"Book"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-08-08 12:02:49 [Debug] Context '"AppDbContext"' started tracking '"Book"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-08-08 12:02:49 [Debug] Context '"AppDbContext"' started tracking '"Book"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-08-08 12:02:49 [Debug] Context '"AppDbContext"' started tracking '"Book"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-08-08 12:02:49 [Debug] Context '"AppDbContext"' started tracking '"Book"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-08-08 12:02:49 [Debug] Context '"AppDbContext"' started tracking '"Book"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-08-08 12:02:49 [Debug] Context '"AppDbContext"' started tracking '"Book"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-08-08 12:02:49 [Debug] Context '"AppDbContext"' started tracking '"Book"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-08-08 12:02:49 [Debug] Context '"AppDbContext"' started tracking '"Book"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-08-08 12:02:49 [Debug] Closing data reader to '"LibraryApp"' on server '"localhost,1433"'.
+2025-08-08 12:02:49 [Debug] A data reader for '"LibraryApp"' on server '"localhost,1433"' is being disposed after spending 0ms reading results.
+2025-08-08 12:02:49 [Debug] Closing connection to database '"LibraryApp"' on server '"localhost,1433"'.
+2025-08-08 12:02:49 [Debug] Closed connection to database '"LibraryApp"' on server '"localhost,1433"' (0ms).
+2025-08-08 12:02:49 [Debug] Opening connection to database '"LibraryApp"' on server '"localhost,1433"'.
+2025-08-08 12:02:49 [Debug] Opened connection to database '"LibraryApp"' on server '"localhost,1433"'.
+2025-08-08 12:02:49 [Debug] Creating DbCommand for '"ExecuteReader"'.
+2025-08-08 12:02:49 [Debug] Created DbCommand for '"ExecuteReader"' (0ms).
+2025-08-08 12:02:49 [Debug] Initialized DbCommand for '"ExecuteReader"' (0ms).
+2025-08-08 12:02:49 [Debug] Executing DbCommand [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[Id], [u].[BirthDate], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password], [u].[Surname], [u].[Username]
+FROM [Users] AS [u]"
+2025-08-08 12:02:49 [Information] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[Id], [u].[BirthDate], [u].[Email], [u].[IsAdmin], [u].[Name], [u].[Password], [u].[Surname], [u].[Username]
+FROM [Users] AS [u]"
+2025-08-08 12:02:49 [Debug] Context '"AppDbContext"' started tracking '"User"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-08-08 12:02:49 [Debug] Context '"AppDbContext"' started tracking '"User"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-08-08 12:02:49 [Debug] Context '"AppDbContext"' started tracking '"User"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-08-08 12:02:49 [Debug] Context '"AppDbContext"' started tracking '"User"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-08-08 12:02:49 [Debug] Context '"AppDbContext"' started tracking '"User"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-08-08 12:02:49 [Debug] Closing data reader to '"LibraryApp"' on server '"localhost,1433"'.
+2025-08-08 12:02:49 [Debug] A data reader for '"LibraryApp"' on server '"localhost,1433"' is being disposed after spending 0ms reading results.
+2025-08-08 12:02:49 [Debug] Closing connection to database '"LibraryApp"' on server '"localhost,1433"'.
+2025-08-08 12:02:49 [Debug] Closed connection to database '"LibraryApp"' on server '"localhost,1433"' (0ms).
+2025-08-08 12:02:49 [Debug] View lookup cache hit for view '"Admin"' in controller '"Book"'.
+2025-08-08 12:02:49 [Information] Executing ViewResult, running view "Admin".
+2025-08-08 12:02:49 [Debug] The view path '"/Views/Book/Admin.cshtml"' was found in 0.0964ms.
+2025-08-08 12:02:49 [Debug] View lookup cache hit for view '"_Layout"' in controller '"Book"'.
+2025-08-08 12:02:49 [Debug] Found the endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] for address "(action=[Index],controller=[Home])"
+2025-08-08 12:02:49 [Debug] Successfully processed template "{controller=Home}/{action=Index}/{id?}" for "Route: {controller=Home}/{action=Index}/{id?}" resulting in "" and ""
+2025-08-08 12:02:49 [Debug] Link generation succeeded for endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] with result "/"
+2025-08-08 12:02:49 [Debug] Found the endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] for address "(action=[Index],controller=[Home])"
+2025-08-08 12:02:49 [Debug] Successfully processed template "{controller=Home}/{action=Index}/{id?}" for "Route: {controller=Home}/{action=Index}/{id?}" resulting in "" and ""
+2025-08-08 12:02:49 [Debug] Link generation succeeded for endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] with result "/"
+2025-08-08 12:02:49 [Debug] Found the endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] for address "(action=[About],controller=[Home])"
+2025-08-08 12:02:49 [Debug] Successfully processed template "{controller=Home}/{action=Index}/{id?}" for "Route: {controller=Home}/{action=Index}/{id?}" resulting in "/Home/About" and ""
+2025-08-08 12:02:49 [Debug] Link generation succeeded for endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] with result "/Home/About"
+2025-08-08 12:02:49 [Debug] Found the endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] for address "(action=[Contact],controller=[Home])"
+2025-08-08 12:02:49 [Debug] Successfully processed template "{controller=Home}/{action=Index}/{id?}" for "Route: {controller=Home}/{action=Index}/{id?}" resulting in "/Home/Contact" and ""
+2025-08-08 12:02:49 [Debug] Link generation succeeded for endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] with result "/Home/Contact"
+2025-08-08 12:02:49 [Debug] Found the endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] for address "(action=[Privacy],controller=[Home])"
+2025-08-08 12:02:49 [Debug] Successfully processed template "{controller=Home}/{action=Index}/{id?}" for "Route: {controller=Home}/{action=Index}/{id?}" resulting in "/Home/Privacy" and ""
+2025-08-08 12:02:49 [Debug] Link generation succeeded for endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] with result "/Home/Privacy"
+2025-08-08 12:02:49 [Information] Executed ViewResult - view "Admin" executed in 1.4593ms.
+2025-08-08 12:02:49 [Information] Executed action "LibraryApp.Controllers.BookController.Admin (LibraryApp)" in 9.288ms
+2025-08-08 12:02:49 [Information] Executed endpoint '"LibraryApp.Controllers.BookController.Admin (LibraryApp)"'
+2025-08-08 12:02:49 [Debug] Connection id ""0HNEMB8P3C00F"" completed keep alive response.
+2025-08-08 12:02:49 [Debug] '"AppDbContext"' disposed.
+2025-08-08 12:02:49 [Debug] Disposing connection to database '"LibraryApp"' on server '"localhost,1433"'.
+2025-08-08 12:02:49 [Debug] Disposed connection to database '""' on server '""' (0ms).
+2025-08-08 12:02:49 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5077""""/Book/Admin""" - 200 null "text/html; charset=utf-8" 10.7417ms
+2025-08-08 12:02:49 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5077""""/css/site.css""?v=pAGv4ietcJNk_EwsQZ5BN9-K4MuNYS2a9wl4Jw-q9D0" - null null
+2025-08-08 12:02:49 [Debug] Connection id ""0HNEMB8P3C00G"" accepted.
+2025-08-08 12:02:49 [Debug] Connection id ""0HNEMB8P3C00G"" started.
+2025-08-08 12:02:49 [Debug] Connection id ""0HNEMB8P3C00H"" accepted.
+2025-08-08 12:02:49 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5077""""/lib/bootstrap/dist/css/bootstrap.min.css""" - null null
+2025-08-08 12:02:49 [Information] The file "/css/site.css" was not modified
+2025-08-08 12:02:49 [Debug] Connection id ""0HNEMB8P3C00H"" started.
+2025-08-08 12:02:49 [Debug] Handled. Status code: 304 File: "/css/site.css"
+2025-08-08 12:02:49 [Debug] Connection id ""0HNEMB8P3C00I"" accepted.
+2025-08-08 12:02:49 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5077""""/LibraryApp.styles.css""?v=rrze6dKip9cJsKvX2C4uoiW3ALP5K1uTWTfNPWa8eyU" - null null
+2025-08-08 12:02:49 [Debug] Connection id ""0HNEMB8P3C00F"" completed keep alive response.
+2025-08-08 12:02:49 [Debug] Connection id ""0HNEMB8P3C00I"" started.
+2025-08-08 12:02:49 [Debug] Connection id ""0HNEMB8P3C00J"" accepted.
+2025-08-08 12:02:49 [Information] The file "/lib/bootstrap/dist/css/bootstrap.min.css" was not modified
+2025-08-08 12:02:49 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5077""""/css/site.css""?v=pAGv4ietcJNk_EwsQZ5BN9-K4MuNYS2a9wl4Jw-q9D0" - 304 null "text/css" 5.155ms
+2025-08-08 12:02:49 [Debug] Connection id ""0HNEMB8P3C00K"" accepted.
+2025-08-08 12:02:49 [Debug] Connection id ""0HNEMB8P3C00J"" started.
+2025-08-08 12:02:49 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5077""""/Book/site.js""" - null null
+2025-08-08 12:02:49 [Debug] Connection id ""0HNEMB8P3C00K"" started.
+2025-08-08 12:02:49 [Debug] Handled. Status code: 304 File: "/lib/bootstrap/dist/css/bootstrap.min.css"
+2025-08-08 12:02:49 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5077""""/lib/bootstrap/dist/js/bootstrap.bundle.min.js""" - null null
+2025-08-08 12:02:49 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5077""""/lib/jquery/dist/jquery.min.js""" - null null
+2025-08-08 12:02:49 [Information] The file "/LibraryApp.styles.css" was not modified
+2025-08-08 12:02:49 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5077""""/js/site.js""?v=2Ev84XnOX-9jD1m9ukt6ejU2C2mRMxUOqCM99MC1lG8" - null null
+2025-08-08 12:02:49 [Debug] The request path "/Book/site.js" does not match an existing file
+2025-08-08 12:02:49 [Debug] Connection id ""0HNEMB8P3C00G"" completed keep alive response.
+2025-08-08 12:02:49 [Debug] Handled. Status code: 304 File: "/LibraryApp.styles.css"
+2025-08-08 12:02:49 [Debug] Connection id ""0HNEMB8P3C00H"" completed keep alive response.
+2025-08-08 12:02:49 [Debug] No candidates found for the request path '"/Book/site.js"'
+2025-08-08 12:02:49 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5077""""/lib/bootstrap/dist/css/bootstrap.min.css""" - 304 null "text/css" 2.65ms
+2025-08-08 12:02:49 [Debug] Request did not match any endpoints
+2025-08-08 12:02:49 [Information] The file "/lib/jquery/dist/jquery.min.js" was not modified
+2025-08-08 12:02:49 [Information] The file "/lib/bootstrap/dist/js/bootstrap.bundle.min.js" was not modified
+2025-08-08 12:02:49 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5077""""/LibraryApp.styles.css""?v=rrze6dKip9cJsKvX2C4uoiW3ALP5K1uTWTfNPWa8eyU" - 304 null "text/css" 1.3641ms
+2025-08-08 12:02:49 [Debug] Connection id ""0HNEMB8P3C00I"" completed keep alive response.
+2025-08-08 12:02:49 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5077""""/Book/site.js""" - 404 0 null 0.6302ms
+2025-08-08 12:02:49 [Debug] Handled. Status code: 304 File: "/lib/jquery/dist/jquery.min.js"
+2025-08-08 12:02:49 [Debug] Handled. Status code: 304 File: "/lib/bootstrap/dist/js/bootstrap.bundle.min.js"
+2025-08-08 12:02:49 [Information] The file "/js/site.js" was not modified
+2025-08-08 12:02:49 [Information] Request reached the end of the middleware pipeline without being handled by application code. Request path: "GET" "http"://"localhost:5077""""/Book/site.js", Response status code: 404
+2025-08-08 12:02:49 [Debug] Connection id ""0HNEMB8P3C00J"" completed keep alive response.
+2025-08-08 12:02:49 [Debug] Connection id ""0HNEMB8P3C00F"" completed keep alive response.
+2025-08-08 12:02:49 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5077""""/lib/jquery/dist/jquery.min.js""" - 304 null "text/javascript" 0.955ms
+2025-08-08 12:02:49 [Debug] Handled. Status code: 304 File: "/js/site.js"
+2025-08-08 12:02:49 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5077""""/lib/bootstrap/dist/js/bootstrap.bundle.min.js""" - 304 null "text/javascript" 1.3012ms
+2025-08-08 12:02:49 [Debug] Connection id ""0HNEMB8P3C00K"" completed keep alive response.
+2025-08-08 12:02:49 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5077""""/js/site.js""?v=2Ev84XnOX-9jD1m9ukt6ejU2C2mRMxUOqCM99MC1lG8" - 304 null "text/javascript" 1.3166ms
+2025-08-08 12:03:18 [Debug] Connection id ""0HNEMB8P3C00G"" received FIN.
+2025-08-08 12:03:18 [Debug] Connection id ""0HNEMB8P3C00H"" received FIN.
+2025-08-08 12:03:18 [Debug] Connection id ""0HNEMB8P3C00F"" received FIN.
+2025-08-08 12:03:18 [Debug] Connection id ""0HNEMB8P3C00K"" received FIN.
+2025-08-08 12:03:18 [Debug] Connection id ""0HNEMB8P3C00I"" received FIN.
+2025-08-08 12:03:18 [Debug] Connection id ""0HNEMB8P3C00G"" sending FIN because: ""The Socket transport's send loop completed gracefully.""
+2025-08-08 12:03:18 [Debug] Connection id ""0HNEMB8P3C00J"" received FIN.
+2025-08-08 12:03:18 [Debug] Connection id ""0HNEMB8P3C00G"" disconnecting.
+2025-08-08 12:03:18 [Debug] Connection id ""0HNEMB8P3C00H"" disconnecting.
+2025-08-08 12:03:18 [Debug] Connection id ""0HNEMB8P3C00G"" stopped.
+2025-08-08 12:03:18 [Debug] Connection id ""0HNEMB8P3C00H"" sending FIN because: ""The Socket transport's send loop completed gracefully.""
+2025-08-08 12:03:18 [Debug] Connection id ""0HNEMB8P3C00F"" disconnecting.
+2025-08-08 12:03:18 [Debug] Connection id ""0HNEMB8P3C00F"" stopped.
+2025-08-08 12:03:18 [Debug] Connection id ""0HNEMB8P3C00K"" disconnecting.
+2025-08-08 12:03:18 [Debug] Connection id ""0HNEMB8P3C00K"" stopped.
+2025-08-08 12:03:18 [Debug] Connection id ""0HNEMB8P3C00H"" stopped.
+2025-08-08 12:03:18 [Debug] Connection id ""0HNEMB8P3C00I"" disconnecting.
+2025-08-08 12:03:18 [Debug] Connection id ""0HNEMB8P3C00I"" sending FIN because: ""The Socket transport's send loop completed gracefully.""
+2025-08-08 12:03:18 [Debug] Connection id ""0HNEMB8P3C00J"" disconnecting.
+2025-08-08 12:03:18 [Debug] Connection id ""0HNEMB8P3C00J"" stopped.
+2025-08-08 12:03:18 [Debug] Connection id ""0HNEMB8P3C00I"" stopped.
+2025-08-08 12:03:18 [Debug] Connection id ""0HNEMB8P3C00F"" sending FIN because: ""The Socket transport's send loop completed gracefully.""
+2025-08-08 12:03:18 [Debug] Connection id ""0HNEMB8P3C00K"" sending FIN because: ""The Socket transport's send loop completed gracefully.""
+2025-08-08 12:03:18 [Debug] Connection id ""0HNEMB8P3C00J"" sending FIN because: ""The Socket transport's send loop completed gracefully.""
+2025-08-08 14:57:46 [Information] Application is shutting down...
+2025-08-08 14:57:46 [Debug] Hosting stopping
+2025-08-08 14:57:46 [Debug] Hosting stopped
